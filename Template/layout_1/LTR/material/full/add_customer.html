@@ -44,9 +44,8 @@
     <script src="../../../../global_assets/js/demo_charts/pages/dashboard/light/bullets.js"></script>
 
 
-    <!-- For Select -->
-    <script src="../../../../global_assets/js/plugins/forms/selects/select2.min.js"></script>
-	<script src="../../../../global_assets/js/demo_pages/form_select2.js"></script>
+    <!--    For Radio Checkbox-->
+    <script src="../../../../global_assets/js/demo_pages/form_checkboxes_radios.js"></script>
     <!-- /theme JS files -->
 
 </head>
@@ -462,7 +461,7 @@
                 <div class="d-flex">
                     <div class="breadcrumb">
                         <a href="index.html" class="breadcrumb-item"><i class="icon-home2 mr-2"></i> Home</a>
-                        <span class="breadcrumb-item active">Add User</span>
+                        <span class="breadcrumb-item active">Add Customer</span>
                     </div>
 
                     <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
@@ -498,81 +497,91 @@
 
         <!-- Content area -->
         <div class="content">
-            <h3>Add User</h3>
+            <h3>Add Customer</h3>
+
             <form action="">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group row">
-                        <label class="col-form-label col-lg-2">User Name<span class="text-danger">*</span></label>
-                        <div class="col-lg-10">
-                            <input type="text" class="form-control" placeholder="Enter user name...">
-                        </div>
-                    </div>
-    
-                    <div class="form-group row">
-                        <label class="col-form-label col-lg-2">Email<span class="text-danger">*</span></label>
-                        <div class="col-lg-10">
-                            <input type="email" class="form-control" placeholder="Enter email address...">
-                        </div>
-                    </div>
-    
-                    <div class="form-group row">
-                        <label class="col-form-label col-lg-2">Phone</label>
-                        <div class="col-lg-10">
-                            <textarea type="text" class="form-control"></textarea>
-                        </div>
-                    </div>
-    
-                    <div class="form-group row">
-                        <label class="col-form-label col-lg-2">Image</label>
-                        <div class="col-lg-10">
-                            <div class="uniform-uploader"><input type="file" class="form-control-uniform" data-fouc=""><span class="filename" style="user-select: none;">No file selected</span><span class="action btn btn-light legitRipple" style="user-select: none;">Choose File</span></div>
-                        </div>
+                <div class="form-group row">
+                    <label class="col-form-label col-lg-2">Name<span class="text-danger">*</span></label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" placeholder="Enter your name...">
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="form-group row">
-                        <label class="col-form-label col-lg-2">Address</label>
-                        <div class="col-lg-10">
-                            <input type="email" class="form-control" placeholder="Enter your address...">
-                        </div>
-                    </div>
 
-                    <div class="form-group row">
-                        <label class="col-form-label col-lg-2">Role<span class="text-danger">*</span></label>
-                        <div class="col-lg-10">
-							<select class="form-control select" data-fouc>
-								<optgroup label="Adminetration">
-									<option value="AZ">Supper Admin</option>
-									<option value="CO">Admin</option>						
-								</optgroup>
-								<optgroup label="User">
-									<option value="AL">User</option>							
-								</optgroup>
-							</select>
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label class="col-form-label col-lg-2">Password<span class="text-danger">*</span></label>
-                        <div class="col-lg-10">
-                            <input type="email" class="form-control" placeholder="Enter password...">
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label class="col-form-label col-lg-2">Confirm Password<span class="text-danger">*</span></label>
-                        <div class="col-lg-10">
-                            <input type="email" class="form-control" placeholder="Confirm password...">
-                        </div>
+                <div class="form-group row">
+                    <label class="col-form-label col-lg-2">Phone<span class="text-danger">*</span></label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" placeholder="Enter phone number...">
                     </div>
                 </div>
-            </div> 
-            <div class="ps-5">
-                <div class="text-start">
-                    <button type="submit" class="btn btn-primary legitRipple">Save</button>
+
+                <div class="form-group row">
+                    <label class="col-form-label col-lg-2">Email<span class="text-danger">*</span></label>
+                    <div class="col-lg-10">
+                        <input type="email" class="form-control" placeholder="Enter email address...">
+                    </div>
                 </div>
-            </div>
+
+                <div class="form-group row">
+                    <label class="col-form-label col-lg-2">Department</label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" placeholder="Enter your department name...">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-form-label col-lg-2">Batch</label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" placeholder="Enter your batch number...">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-form-label col-lg-2">Age</label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" placeholder="Enter your age...">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-form-label col-lg-2">Address</label>
+                    <div class="col-lg-10">
+                        <textarea type="text" class="form-control"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-form-label col-lg-2">Image</label>
+                    <div class="col-lg-10">
+                        <div class="uniform-uploader"><input type="file" class="form-control-uniform" data-fouc=""><span class="filename" style="user-select: none;">No file selected</span><span class="action btn btn-light legitRipple" style="user-select: none;">Choose File</span></div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-form-label col-lg-2">User Name<span class="text-danger">*</span></label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" placeholder="Enter your user name...">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-form-label col-lg-2">Password<span class="text-danger">*</span></label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" placeholder="Enter your password...">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-form-label col-lg-2">Confirm Password<span class="text-danger">*</span></label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" placeholder="Cofirm password...">
+                    </div>
+                </div>
+
+                <div class="ps-5">
+                    <div class="text-start">
+                        <button type="submit" class="btn btn-primary legitRipple">Save</button>
+                    </div>
+                </div>
             </form>
         </div>
         <!-- /content area -->
