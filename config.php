@@ -1,5 +1,5 @@
 <?php
-
+// $webroot = "http://campus_canteen.test";
 // $DocRoot = $_SERVER['DOCUMENT_ROOT'].DIRECTORY_SEPARATOR;
 $DocRoot = $_SERVER['DOCUMENT_ROOT'].'/campus_canteen';
 

@@ -3,11 +3,11 @@
         ["menu" => "Dashboard",  "icon" => "icon-home4"],
         ["menu" => "POS",  "icon" => "icon-printer4"],
         ["menu" =>"Customers",  "icon" => "icon-users2", "SubMenu"=>["Add Customer", "Customers"]],
-        ["menu" =>"Category",  "icon" => "icon-list","SubMenu"=>[]],
-        ["menu" =>"Outdoor Place",  "icon" => "icon-exit3","SubMenu"=>[]],
-        ["menu" =>"Orders",  "icon" => "icon-compose","SubMenu"=>[]],
-        ["menu" =>"Settings",  "icon" => "icon-cogs","SubMenu"=>[]],
-        ["menu" =>"App configuration",  "icon" => "icon-android","SubMenu"=>[]],
+        ["menu" =>"Category",  "icon" => "icon-list","SubMenu"=>["Add Category","Categories"]],
+        ["menu" =>"Outdoor Place",  "icon" => "icon-exit3","SubMenu"=>["Add Outdoor Place", "Outdoors"]],
+        ["menu" =>"Orders",  "icon" => "icon-compose","SubMenu"=>["Add Order","Orders"]],
+        ["menu" =>"Settings",  "icon" => "icon-cogs","SubMenu"=>["Add User","Users","User Roles","Permitions"]],
+        ["menu" =>"App configuration",  "icon" => "icon-android","SubMenu"=>["App Config","Banner Images","Privecy And Policy Page","About Page"]],
     ];
 ?>
 
@@ -15,54 +15,22 @@
 	<ul class="nav nav-sidebar" data-nav-type="accordion">
     <?php
         foreach($menuChilds as $menuChild){
-            echo ' <li class="nav-item">
-                     <a href="index.html" class="nav-link active">
+        echo ' <li class="nav-item">
+                     <a href="" class="nav-link active">
                         <i class='.$menuChild['icon'].'></i>
-                    <span>
-                    '.$menuChild['menu'].'
-                    </span>
+						<span>
+						'.$menuChild['menu'].'
+						</span>
                     </a>
-                </li>';
-// print_r($menuChild);
-                if(array_key_exists('SubMenu', $menuChild)){
-                    echo 'yes';
-                    // foreach($menuChild['SubMenu'] as $subMenu){
-                    //     echo '<li class="nav-item">
-                    //     <a href="index.html" class="nav-link active">
-                    //         <i class="icon-home4"></i>
-                    //         <span>
-                    //             '.$subMenu.'
-                    //         </span>
-                    //     </a>
-                    // </li>';
-                    // };
-                }else{
-                    echo "no";
-                }
+					<ul class="nav nav-group-sub" data-submenu-title="Layouts">';
+					if(array_key_exists('SubMenu', $menuChild)){
+						foreach($menuChild['SubMenu'] as $subMenu){
+							echo '<li class="nav-item"><a href="add_customer.html" class="nav-link active">'.$subMenu.'</a></li>';
+						};
+                	};	
+				echo '</ul>
+            </li>';
         };
-
-
-
-
-        // foreach($navgroups as $key=>$navgroup){
-        //     echo '<li class="nav-item-header">
-        //             <div class="text-uppercase font-size-xs line-height-xs">'
-        //             .$key.$navgroup.
-        //             '</div> <i class="icon-menu" title="Main"></i></li>';
-        //         if($key === 0){
-        //             foreach($mainnavitems as $mainnavitem){
-        //                 echo '<li class="nav-item">
-        //                 <a href="index.html" class="nav-link active">
-        //                     <i class="icon-home4"></i>
-        //                     <span>
-        //                         '.$mainnavitem.'
-        //                     </span>
-        //                 </a>
-        //             </li>';
-        //             }
-        //         }
-        // }
-    
     ?>
 					
                    
