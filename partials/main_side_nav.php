@@ -1,13 +1,31 @@
 <?php
     $menuChilds = [
-        ["menu" => "Dashboard",  "icon" => "icon-home4"],
-        ["menu" => "POS",  "icon" => "icon-printer4"],
-        ["menu" =>"Customers",  "icon" => "icon-users2", "SubMenu"=>["Add Customer", "Customers"]],
-        ["menu" =>"Category",  "icon" => "icon-list","SubMenu"=>["Add Category","Categories"]],
-        ["menu" =>"Outdoor Place",  "icon" => "icon-exit3","SubMenu"=>["Add Outdoor Place", "Outdoors"]],
-        ["menu" =>"Orders",  "icon" => "icon-compose","SubMenu"=>["Add Order","Orders"]],
-        ["menu" =>"Settings",  "icon" => "icon-cogs","SubMenu"=>["Add User","Users","User Roles","Permitions"]],
-        ["menu" =>"App configuration",  "icon" => "icon-android","SubMenu"=>["App Config","Banner Images","Privecy And Policy Page","About Page"]],
+        ["menu" => "Dashboard",  "icon" => "icon-home4", 'link'=>'index.php'],
+        ["menu" => "POS",  "icon" => "icon-printer4", 'link'=>'pos_index.html'],
+        ["menu" =>"Customers",  "icon" => "icon-users2",  
+		"subMenu"=>["Add Customer",  "Customers"], 
+		"subLink" =>["add_customer.html", "customers.html"]
+		],
+        ["menu" =>"Category",  "icon" => "icon-list", 
+		"subMenu"=>["Add Category","Categories"], 
+		"subLink" =>["add_category.html", "categories.html"]
+		],
+        ["menu" =>"Outdoor Place",  "icon" => "icon-exit3",
+		"subMenu"=>["Add Outdoor Place", "Outdoors"],
+		"subLink" =>["add_outdoor_place.html", "outdoor_places.html"]
+		],
+        ["menu" =>"Orders",  "icon" => "icon-compose", 
+		"subMenu"=>["Add Order","Orders"], 
+		"subLink" =>["add_order.html", "orders.html"]
+		],
+        ["menu" =>"Settings",  "icon" => "icon-cogs", 
+		"subMenu"=>["Add User","Users","User Roles","Permitions"], 
+		"subLink" =>["add_user.html", "users.html", "user_roles.html", "premishions.html"]
+		],
+        ["menu" =>"App configuration",  "icon" => "icon-android", 
+		"subMenu"=>["App Config","Banner Images","Privecy And Policy Page","About Page"], 
+		"subLink" =>["app_config.html", "banner_images.html", "privecy_policy_page_setup.html", ]
+		],
     ];
 ?>
 
@@ -16,20 +34,28 @@
     <?php
         foreach($menuChilds as $menuChild){
         echo ' <li class="nav-item">
-                     <a href="" class="nav-link active">
+                     <a href=';
+					  if(array_key_exists('link', $menuChild)){
+						echo $menuChild['link'].' class="nav-link active">';
+						}else{
+							echo '#'.' class="nav-link">';
+						};
+					  ;
+					  echo '
                         <i class='.$menuChild['icon'].'></i>
 						<span>
 						'.$menuChild['menu'].'
 						</span>
-                    </a>
-					<ul class="nav nav-group-sub" data-submenu-title="Layouts">';
-					if(array_key_exists('SubMenu', $menuChild)){
-						foreach($menuChild['SubMenu'] as $subMenu){
-							echo '<li class="nav-item"><a href="add_customer.html" class="nav-link active">'.$subMenu.'</a></li>';
-						};
+                    </a>';
+					
+					if(array_key_exists('subMenu', $menuChild)){
+						echo '<ul class="nav nav-group-sub" data-submenu-title="Layouts">';
+						foreach($menuChild['subMenu'] as $key => $subMenu){
+							echo '<li class="nav-item"><a href='.$menuChild['subLink'][$key].' class="nav-link active">'.$subMenu.'</a></li>';
+						}
+					echo '</ul>';
                 	};	
-				echo '</ul>
-            </li>';
+            echo '</li>';
         };
     ?>
 					
@@ -61,19 +87,19 @@
 								<li class="nav-item"><a href="add_customer.html" class="nav-link active">Add Castomer</a></li>
 								<li class="nav-item"><a href="customers.html" class="nav-link active">Castomers</a></li>
 							</ul>
-						</li>
+						</li> -->
 
 					
-						<li class="nav-item nav-item-submenu">
+						<!-- <li class="nav-item nav-item-submenu">
 							<a href="#" class="nav-link"><i class="icon-list mr-3"></i> <span>Category</span></a>
 
 							<ul class="nav nav-group-sub" data-submenu-title="Layouts">
 								<li class="nav-item"><a href="add_category.html" class="nav-link active">Add Category</a></li>
 								<li class="nav-item"><a href="categories.html" class="nav-link active">Categories</a></li>
 							</ul>
-						</li>
+						</li> -->
 
-						
+<!-- 						
 						<li class="nav-item nav-item-submenu">
 							<a href="#" class="nav-link"><i class="icon-basket mr-3"></i> <span>Product</span></a>
 
@@ -125,6 +151,6 @@
 								<li class="nav-item"><a href="privecy_policy_page_setup.html" class="nav-link active">Privecy And Policy Page</a></li>
 								<li class="nav-item"><a href="about_page_setup.html" class="nav-link active">About Page</a></li>
 							</ul>
-						</li> -->
+						</li>  -->
 					</ul>
 				</div>
