@@ -1,4 +1,4 @@
-<?php
+  <?php
     $menuChilds = [
         ["menu" => "Dashboard",  "icon" => "icon-home4", 'link'=>'index.php'],
         ["menu" => "POS",  "icon" => "icon-printer4", 'link'=>'pos_index.html'],

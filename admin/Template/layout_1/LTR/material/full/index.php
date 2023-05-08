@@ -1,19 +1,16 @@
-<?php
-	$config = $_SERVER['DOCUMENT_ROOT'].'/campus_canteen/config.php';
-	include_once($config);
-?>
+<?php include_once($_SERVER['DOCUMENT_ROOT'].DIRECTORY_SEPARATOR.'config.php');?>
 
 <!DOCTYPE html>
 <html lang="en">
 <?php
-include_once($head);
+include_once($partialAdmin.'head.php');
 ?>
 
 <body>
 
 	<!-- Main navbar -->
 	<?php
-	include_once($topNav);
+	include_once($partialAdmin.'top_nav.php');
 	?>
 	<!-- /main navbar -->
 
@@ -43,14 +40,14 @@ include_once($head);
 
 				<!-- User menu -->
 				<?php
-				include_once($useroparetionsAndAvatar);
+				include_once($partialAdmin.'user_oparetions_and_avatar.php');
 				?>
 				<!-- /user menu -->
 
 
 				<!-- Main navigation -->
 				<?php
-				include_once($mainSideNav);
+				include_once($partialAdmin.'main_side_nav.php');
 				?>
 				<!-- /main navigation -->
 
@@ -66,7 +63,7 @@ include_once($head);
 
 			<!-- Page header -->
 			<?php
-			include_once($pageHeaderNav);
+			// include_once($pageHeaderNav);
 			?>
 			<!-- /page header -->
 
@@ -1769,7 +1766,7 @@ include_once($head);
 
 			<!-- Footer -->
 			<?php
-			include_once($footer);
+			include_once($partialAdmin.'footer.php');
 			?>
 			<!-- /footer -->
 
