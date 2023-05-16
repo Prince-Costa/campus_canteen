@@ -34,7 +34,7 @@ $silderDatas = json_decode($jsonFormetedSilderData);
                         <h5 style="color: white;"><?=$slider->title ?></h5>
                         <p style="color: white;"><?=$slider->description ?></p>
                         <p>
-                            <a href="<?=$slider->description?>" class="btn btn-warning mt3">Show More</a>
+                            <a href="<?=$slider->url?>" class="btn btn-warning mt3">Show More</a>
                         </p>
                     </div>
             </div>
