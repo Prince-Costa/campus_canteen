@@ -1,0 +1,75 @@
+[
+    {
+        "title" :"Corn",
+        "price" :"10$",
+        "src" :"https://theblondcook.com/wp-content/uploads/2018/10/easy-creamed-corn-4.jpg",
+        "alt" :"corn.jpg",
+        "e_sale" : false,
+        "outdore" : true,
+        "cost_price" :"9$",
+        "type" :"Vegetable",
+        "date" :"17-May-2023",
+        "status" :true,
+        "url" :"productdetails.html"
+    },{
+        "title" :"Nasos",
+        "price" :"20$",
+        "src" :"https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Nachos-cheese.jpg/1200px-Nachos-cheese.jpg",
+        "alt" :"nacos.jpg",
+        "e_sale" : true,
+        "outdore" : true,
+        "cost_price" :"18$",
+        "type" :"Fast Food",
+        "date" :"17-May-2023",
+        "status" :true,
+        "url" :"productdetails.html"
+    },{
+        "title" :"Salad",
+        "price" :"15$",
+        "src" :"https://www.acouplecooks.com/wp-content/uploads/2019/05/Chopped-Salad-008.jpg",
+        "alt" :"salad.jpg",
+        "e_sale" : true,
+        "outdore" : false,
+        "cost_price" :"13$",
+        "type" :"Vegetable",
+        "date" :"17-May-2023",
+        "status" :true,
+        "url" :"productdetails.html"
+    },{
+        "title" :"Rice",
+        "price" :"15$",
+        "src" :"../global_assets/img/rice.jpg",
+        "alt" :"rice.jpg",
+        "e_sale" : true,
+        "outdore" : true,
+        "cost_price" :"14$",
+        "type" :"Rice",
+        "date" :"17-May-2023",
+        "status" :true,
+        "url" :"productdetails.html"
+    },{
+        "title" :"Fruits",
+        "price" :"15$",
+        "src" :"../global_assets/img/fruits.jpg",
+        "alt" :"fruits.jpg",
+        "e_sale" : true,
+        "outdore" : true,
+        "cost_price" :"12$",
+        "type" :"Fruit",
+        "date" :"17-May-2023",
+        "status" :true,
+        "url" :"productdetails.html"
+    },{
+        "title" :"Donat",
+        "price" :"15$",
+        "src" :"../global_assets/img/donat.jpg",
+        "alt" :"donat.jpg",
+        "e_sale" : true,
+        "outdore" : true,
+        "cost_price" :"14$",
+        "type" :"Fast Food",
+        "date" :"17-May-2023",
+        "status" :true,
+        "url" :"productdetails.html"
+    }
+]

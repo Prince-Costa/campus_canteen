@@ -41,7 +41,7 @@
                     </div>
                 </div>
             </div>
-            <?php include_once($partialFrontend."productCards.php")?>
+            <?php include_once($partialFrontend."products.php")?>
       </section>
 
       <?php include_once($partialFrontend.'footer.php')?>

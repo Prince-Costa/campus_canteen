@@ -1,7 +1,7 @@
   <?php
   include_once($_SERVER['DOCUMENT_ROOT'].DIRECTORY_SEPARATOR.'config.php');
 
-  $navItemsInJson = file_get_contents($adminResources."side_nav.json");
+  $navItemsInJson = file_get_contents($dataResources."side_nav.json");
   $navItems = json_decode($navItemsInJson);
 ?>
 

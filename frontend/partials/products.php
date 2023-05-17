@@ -1,7 +1,7 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'config.php');
 
-$productsInJson = file_get_contents($frontendResources . "productCard.json");
+$productsInJson = file_get_contents($dataResources . "products.json");
 
 $products = json_decode($productsInJson);
 ?>

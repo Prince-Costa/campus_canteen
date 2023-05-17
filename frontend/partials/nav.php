@@ -1,7 +1,7 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'config.php');
 
-$navJson = file_get_contents($frontendResources . "nav.json");
+$navJson = file_get_contents($dataResources . "nav.json");
 
 $navs = json_decode($navJson);
 ?>

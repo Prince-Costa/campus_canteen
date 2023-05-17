@@ -1,5 +1,5 @@
 <?php include_once($_SERVER['DOCUMENT_ROOT'].DIRECTORY_SEPARATOR.'config.php');
-$jsonFormetedSilderData = file_get_contents($frontendResources."slider.json");
+$jsonFormetedSilderData = file_get_contents($dataResources."slider.json");
 $silderDatas = json_decode($jsonFormetedSilderData);
 ?>
 

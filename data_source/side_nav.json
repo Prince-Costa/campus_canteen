@@ -1,0 +1,126 @@
+[
+  {
+    "name": "Dashboard",
+    "icon": "icon-home4",
+    "url": "index.php"
+  },
+  {
+    "name": "POS",
+    "icon": "icon-printer4",
+    "url": "pos_index.html"
+  },
+  {
+    "name": "Customers",
+    "icon": "icon-users2",
+    "subnav": [
+      {
+        "name": "Add Customer",
+        "url": "add_customer.html"
+      },
+      {
+        "name": "Customers",
+        "url": "customers.html"
+      }
+    ]
+  },
+  {
+    "name": "Categories",
+    "icon": "icon-list",
+    "subnav": [
+      {
+        "name": "Add Category",
+        "url": "add_category.html"
+      },
+      {
+        "name": "Categories",
+        "url": "categories.html"
+      }
+    ]
+  },
+  {
+    "name": "Products",
+    "icon": "icon-grid4",
+    "subnav": [
+      {
+        "name": "Add Product",
+        "url": "add_product.html"
+      },
+      {
+        "name": "Products",
+        "url": "products.php"
+      }
+    ]
+  },
+  {
+    "name": "Outdoor Place",
+    "icon": "icon-exit3",
+    "subnav": [
+      {
+        "name": "Add Outdoor Place",
+        "url": "add_outdoor_place.html"
+      },
+      {
+        "name": "Outdoors",
+        "url": "outdoor_places.html"
+      }
+    ]
+  },
+  {
+    "name": "Orders",
+    "icon": "icon-compose",
+    "subnav": [
+      {
+        "name": "Add Order",
+        "url": "add_order.html"
+      },
+      {
+        "name": "Orders",
+        "url": "orders.html"
+      }
+    ]
+  },
+  {
+    "name": "Settings",
+    "icon": "icon-cogs",
+    "subnav": [
+      {
+        "name": "Add User",
+        "url": "add_user.html"
+      },
+      {
+        "name": "Users",
+        "url": "users.html"
+      },
+      {
+        "name": "User Roles",
+        "url": "user_roles.html"
+      },
+      {
+        "name": "Permitions",
+        "url": "premishions.html"
+      }
+    ]
+  },
+  {
+    "name": "App configuration",
+    "icon": "icon-android",
+    "subnav": [
+      {
+        "name": "App Config",
+        "url": "app_config.html"
+      },
+      {
+        "name": "Banner Images",
+        "url": "banner_images.html"
+      },
+      {
+        "name": "Privecy And Policy Page",
+        "url": "privecy_policy_page_setup.html"
+      },
+      {
+        "name": "About Page",
+        "url": "about_page_setup.html"
+      }
+    ]
+  }
+]
