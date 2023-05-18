@@ -80,7 +80,7 @@ include_once($partialAdmin . 'head.php');
                         <h5 class="card-title">Products</h5>
                         <a href="add_product.html" class="btn btn-info legitRipple">Add Product</a>
                     </div>
-                    <ul class="nav nav-tabs">
+                    <ul class="nav nav-tabs mb-0">
                         <li class="nav-item"><a href="#basic-tab1" class="nav-link active" data-toggle="tab">List
                                 View</a></li>
                         <li class="nav-item"><a href="#basic-tab2" class="nav-link" data-toggle="tab">Grid View</a></li>
@@ -88,10 +88,11 @@ include_once($partialAdmin . 'head.php');
 
                     <div class="tab-content">
                         <div class="tab-pane fade active show" id="basic-tab1">
+                        <div class="d-flex mb-2">                       
+                            <a class="btn"><i class="icon-download"></i>  Pdf</a>
+                            <a class="btn"><i class="icon-download"></i>  Excl</a>                        
+                        </div>
                             <div class="card p-3 mt-3">
-                                <div class="card-body">
-                                </div>
-
                                 <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper no-footer">
                                     <div class="datatable-header">
                                         <div id="DataTables_Table_0_filter" class="dataTables_filter">
@@ -206,11 +207,11 @@ include_once($partialAdmin . 'head.php');
                                                                 class="badge <?php echo ($product->status ? 'badge-success' : 'badge-danger') ?>"><?php echo ($product->status ? 'Active' : 'Inective') ?></span>
                                                         </td>
                                                         <td class="text-center">
-                                                            <div class="d-flex  ">
-                                                                <a class="btn btn-primary"
-                                                                    href="show_product.php?id=<?= $product->id ?>">Show</a>
-                                                                <a href="" class="btn btn-info btn-sm">Edit</a>
-                                                                <a href="" class="btn btn-danger btn-sm">Delete</a>
+                                                            <div class="d-flex">
+                                                                <a class="btn border rounded-round mx-1"
+                                                                    href="show_product.php?id=<?= $product->id ?>"><i class="icon-eye"></i></a>
+                                                                <a href="" class="btn border rounded-round mx-1"><i class="icon-pencil"></i></a>
+                                                                <a href="" class="btn border rounded-round mx-1"><i class="icon-trash"></i></a>
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -242,6 +243,10 @@ include_once($partialAdmin . 'head.php');
                         </div>
 
                         <div class="tab-pane fade" id="basic-tab2">
+                        <div class="d-flex mb-2">                       
+                            <a class="btn"><i class="icon-download"></i>  Pdf</a>
+                            <a class="btn"><i class="icon-download"></i>  Excl</a>                        
+                        </div>
                             <div class="row mx-o">
                                 <?php foreach ($products as $key => $product): ?>
                                     <div class="col-sm-6 col-xl-3">
@@ -266,10 +271,10 @@ include_once($partialAdmin . 'head.php');
                                                 </div>
                                             </div>
                                             <div class="d-flex justify-content-between p-3">
-                                                <a class="btn btn-primary"
-                                                    href="show_product.php?id=<?= $product->id ?>">Show</a>
-                                                <a class="btn btn-info" href="">Edit</a>
-                                                <a class="btn btn-danger" href="">Delete</a>
+                                                <a class="btn border rounded-round mx-1"
+                                                    href="show_product.php?id=<?= $product->id ?>"><i class="icon-eye"></i></a>
+                                                <a href="" class="btn border rounded-round mx-1"><i class="icon-pencil"></i></a>
+                                                <a href="" class="btn border rounded-round mx-1"><i class="icon-trash"></i></a>
                                             </div>
                                         </div>
                                     </div>

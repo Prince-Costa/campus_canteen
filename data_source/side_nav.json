@@ -43,7 +43,7 @@
     "subnav": [
       {
         "name": "Add Product",
-        "url": "add_product.html"
+        "url": "add_product.php"
       },
       {
         "name": "Products",

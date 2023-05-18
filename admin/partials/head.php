@@ -41,4 +41,8 @@
 	<script src="../../../../global_assets/js/demo_charts/pages/dashboard/light/pies.js"></script>
 	<script src="../../../../global_assets/js/demo_charts/pages/dashboard/light/bullets.js"></script>
 	<!-- /theme JS files -->
+
+	 <!--    For Radio Checkbox-->
+	 <script src="../../../../global_assets/js/demo_pages/form_checkboxes_radios.js"></script>
+    <!-- /theme JS files -->
 </head>
