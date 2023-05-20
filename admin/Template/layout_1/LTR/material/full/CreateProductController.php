@@ -1,7 +1,9 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'config.php');
+$productsInJson = file_get_contents($dataResources . 'products.json');
+$products = json_decode($productsInJson);
 
-$id = 7;
+$id = count($products)+1;
 $uuid = "wewqsd";
 $title = $_GET['title'];
 $price = $_GET['price'];
@@ -37,8 +39,7 @@ $data = [
 "status" =>true,
 ];
 
-$productsInJson = file_get_contents($dataResources . 'products.json');
-$products = json_decode($productsInJson);
+
 $products[] = (object) $data;
 
 $dataInJson = json_encode($products);

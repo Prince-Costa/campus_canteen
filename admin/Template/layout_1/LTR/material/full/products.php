@@ -88,11 +88,11 @@ include_once($partialAdmin . 'head.php');
 
                     <div class="tab-content">
                         <div class="tab-pane fade active show" id="basic-tab1">
-                        <div class="d-flex mb-2">                       
-                            <a class="btn"><i class="icon-download"></i>  Pdf</a>
-                            <a class="btn"><i class="icon-download"></i>  Excl</a>                        
+                        <div class="d-flex mb-0 justify-content-end">                       
+                            <a class="btn border"><i class="icon-download"></i>  Pdf</a>
+                            <a class="btn border"><i class="icon-download"></i>  Excl</a>                        
                         </div>
-                            <div class="card p-3 mt-3">
+                            <div class="card p-3">
                                 <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper no-footer">
                                     <div class="datatable-header">
                                         <div id="DataTables_Table_0_filter" class="dataTables_filter">
@@ -243,9 +243,9 @@ include_once($partialAdmin . 'head.php');
                         </div>
 
                         <div class="tab-pane fade" id="basic-tab2">
-                        <div class="d-flex mb-2">                       
-                            <a class="btn"><i class="icon-download"></i>  Pdf</a>
-                            <a class="btn"><i class="icon-download"></i>  Excl</a>                        
+                        <div class="d-flex mb-0 justify-content-end">                       
+                            <a class="btn border"><i class="icon-download"></i>  Pdf</a>
+                            <a class="btn border"><i class="icon-download"></i>  Excl</a>                        
                         </div>
                             <div class="row mx-o">
                                 <?php foreach ($products as $key => $product): ?>
@@ -254,12 +254,6 @@ include_once($partialAdmin . 'head.php');
                                             <div class="card-img-actions mx-1 mt-1">
                                                 <img class="card-img img-fluid" src="<?= $product->src ?>"
                                                     alt="<?= $product->alt ?>" style="height:300px; width=100%">
-                                                <div class="card-img-actions-overlay card-img">
-                                                    <a href="#"
-                                                        class="btn btn-outline bg-white text-white border-white border-2 btn-icon rounded-round ml-2 legitRipple">
-                                                        <i class="icon-link"></i>
-                                                    </a>
-                                                </div>
                                             </div>
 
                                             <div class="card-body">
