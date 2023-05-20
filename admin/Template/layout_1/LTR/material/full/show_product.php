@@ -95,12 +95,6 @@ include_once($partialAdmin . 'head.php');
                         <div class="card-img-actions mx-1 mt-1">
                             <img class="card-img img-fluid" src="<?= $product->src ?>" alt="<?= $product->alt ?>"
                                 style="height:500px; width=100%">
-                            <div class="card-img-actions-overlay card-img">
-                                <a href="#"
-                                    class="btn btn-outline bg-white text-white border-white border-2 btn-icon rounded-round ml-2 legitRipple">
-                                    <i class="icon-link"></i>
-                                </a>
-                            </div>
                         </div>
 
                         <div class="card-body">

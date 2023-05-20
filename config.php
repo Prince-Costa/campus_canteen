@@ -11,6 +11,10 @@ d($var);
 die();
 }
 
+function redirect($url){
+    header("location:$url");
+}
+
 $webroot = "http://campus_canteen.test".DIRECTORY_SEPARATOR;
 $docroot = $_SERVER['DOCUMENT_ROOT'];
 $partialAdmin = $docroot.DIRECTORY_SEPARATOR.'admin'.DIRECTORY_SEPARATOR.'partials'.DIRECTORY_SEPARATOR;

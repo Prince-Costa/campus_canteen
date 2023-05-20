@@ -78,7 +78,7 @@ include_once($partialAdmin . 'head.php');
                 <div class="card-body">
                     <div class="card-header header-elements-inline">
                         <h5 class="card-title">Products</h5>
-                        <a href="add_product.html" class="btn btn-info legitRipple">Add Product</a>
+                        <a href="add_product.php" class="btn btn-info legitRipple">Add Product</a>
                     </div>
                     <ul class="nav nav-tabs mb-0">
                         <li class="nav-item"><a href="#basic-tab1" class="nav-link active" data-toggle="tab">List
@@ -88,10 +88,10 @@ include_once($partialAdmin . 'head.php');
 
                     <div class="tab-content">
                         <div class="tab-pane fade active show" id="basic-tab1">
-                        <div class="d-flex mb-0 justify-content-end">                       
-                            <a class="btn border"><i class="icon-download"></i>  Pdf</a>
-                            <a class="btn border"><i class="icon-download"></i>  Excl</a>                        
-                        </div>
+                            <div class="d-flex mb-0 justify-content-end">
+                                <a class="btn border"><i class="icon-download"></i> Pdf</a>
+                                <a class="btn border"><i class="icon-download"></i> Excl</a>
+                            </div>
                             <div class="card p-3">
                                 <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper no-footer">
                                     <div class="datatable-header">
@@ -209,9 +209,16 @@ include_once($partialAdmin . 'head.php');
                                                         <td class="text-center">
                                                             <div class="d-flex">
                                                                 <a class="btn border rounded-round mx-1"
-                                                                    href="show_product.php?id=<?= $product->id ?>"><i class="icon-eye"></i></a>
-                                                                <a href="" class="btn border rounded-round mx-1"><i class="icon-pencil"></i></a>
-                                                                <a href="" class="btn border rounded-round mx-1"><i class="icon-trash"></i></a>
+                                                                    href="show_product.php?id=<?= $product->id ?>"><i
+                                                                        class="icon-eye"></i></a>
+                                                                <a href="" class="btn border rounded-round mx-1"><i
+                                                                        class="icon-pencil"></i></a>
+                                                                <form action="DeleteProductController.php" method="post">
+                                                                    <input type="hidden" name="id"
+                                                                        value="<?= $product->id ?>">
+                                                                    <button class="btn border rounded-round mx-1"><i
+                                                                            class="icon-trash"></i></button>
+                                                                </form>
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -243,10 +250,10 @@ include_once($partialAdmin . 'head.php');
                         </div>
 
                         <div class="tab-pane fade" id="basic-tab2">
-                        <div class="d-flex mb-0 justify-content-end">                       
-                            <a class="btn border"><i class="icon-download"></i>  Pdf</a>
-                            <a class="btn border"><i class="icon-download"></i>  Excl</a>                        
-                        </div>
+                            <div class="d-flex mb-0 justify-content-end">
+                                <a class="btn border"><i class="icon-download"></i> Pdf</a>
+                                <a class="btn border"><i class="icon-download"></i> Excl</a>
+                            </div>
                             <div class="row mx-o">
                                 <?php foreach ($products as $key => $product): ?>
                                     <div class="col-sm-6 col-xl-3">
@@ -259,16 +266,26 @@ include_once($partialAdmin . 'head.php');
                                             <div class="card-body">
                                                 <div class="d-flex align-items-start flex-nowrap">
                                                     <div>
-                                                        <div class="font-weight-semibold mr-2"><?= $product->title ?></div>
-                                                        <span class="font-size-sm text-muted"><?= $product->price ?></span>
+                                                        <div class="font-weight-semibold mr-2">
+                                                            <?= $product->title ?>
+                                                        </div>
+                                                        <span class="font-size-sm text-muted">
+                                                            <?= $product->price ?>
+                                                        </span>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="d-flex justify-content-between p-3">
                                                 <a class="btn border rounded-round mx-1"
-                                                    href="show_product.php?id=<?= $product->id ?>"><i class="icon-eye"></i></a>
-                                                <a href="" class="btn border rounded-round mx-1"><i class="icon-pencil"></i></a>
-                                                <a href="" class="btn border rounded-round mx-1"><i class="icon-trash"></i></a>
+                                                    href="show_product.php?id=<?= $product->id ?>"><i
+                                                        class="icon-eye"></i></a>
+                                                <a href="" class="btn border rounded-round mx-1"><i
+                                                        class="icon-pencil"></i></a>
+                                                <form action="DeleteProductController.php" method="post">
+                                                    <input type="hidden" name="id" value="<?= $product->id ?>">
+                                                    <button class="btn border rounded-round mx-1"><i
+                                                            class="icon-trash"></i></button>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>

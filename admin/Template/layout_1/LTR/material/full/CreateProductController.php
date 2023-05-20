@@ -2,8 +2,14 @@
 include_once($_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'config.php');
 $productsInJson = file_get_contents($dataResources . 'products.json');
 $products = json_decode($productsInJson);
+$maxId= 0;
+foreach($products as $product){
+    if($product->id > $maxId){
+        $maxId= $product->id;
+    };
+};
 
-$id = count($products)+1;
+$id = $maxId + 1;
 $uuid = "wewqsd";
 $title = $_GET['title'];
 $price = $_GET['price'];
@@ -26,7 +32,7 @@ $date = date("Y-m-d H:i:s");
 
 $data = [
 "id"=>$id,
-"uuid"=>$uuid,
+"uuid"=>$uuid.$id,
 "title" =>$title,
 "price" =>$price,
 "src" =>$src,
