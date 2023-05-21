@@ -19,10 +19,10 @@ $navItems = json_decode($navItemsInJson);
 
 				<?php if (isset($navItem->subnav)): ?>
 					<ul class="nav nav-group-sub" data-submenu-title="<?= $navItem->name ?>" style="display: none;">
-						foreach($navItem->subnav as $submenu){
-						echo '<li class="nav-item"><a href="'.$submenu->url.'"
-								class="nav-link legitRipple">'.$submenu->name.'</a></li>';
-						}
+						<?php foreach($navItem->subnav as $submenu):?>
+						<li class="nav-item"><a href="<?=$submenu->url?>"
+								class="nav-link legitRipple"><?=$submenu->name?></a></li>
+						<?php endforeach?>
 					</ul>
 				<?php endif ?>
 			</li>

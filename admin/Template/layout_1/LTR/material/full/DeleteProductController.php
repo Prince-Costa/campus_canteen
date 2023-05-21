@@ -1,7 +1,7 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'config.php');
 $productsInJson = file_get_contents($dataResources . 'products.json');
-dd($productsInJson);
+
 $id = $_POST["id"];
 $productsInArry = json_decode($productsInJson);
 

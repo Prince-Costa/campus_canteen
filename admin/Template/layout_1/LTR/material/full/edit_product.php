@@ -1,3 +1,22 @@
+<?php
+include_once($_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'config.php');
+$productsInJson = file_get_contents($dataResources . 'products.json');
+$products = json_decode($productsInJson);
+$id = $_GET['id'];
+$product = '';
+foreach ($products as $key => $singleProduct) {
+    if ($singleProduct->id == $id) {
+        $product = $singleProduct;
+    }
+    ;
+}
+?>
+
+
+
+
+
+
 <?php include_once($_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'config.php'); ?>
 
 <!DOCTYPE html>
@@ -70,27 +89,27 @@ include_once($partialAdmin . 'head.php');
 
             <!-- Content area -->
             <div class="content">
-                <h3>Add Product</h3>
+                <h3>Edit Product</h3>
 
                 <form method="post" action="CreateProductController.php">
                     <div class="form-group row">
                         <label class="col-form-label col-lg-2">Title<span class="text-danger">*</span></label>
                         <div class="col-lg-10">
-                            <input type="text" name="title" class="form-control" placeholder="Enter product title...">
+                            <input type="text" name="title" class="form-control" placeholder="Enter product title..." value="<?=$product->title?>">
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label class="col-form-label col-lg-2">Type<span class="text-danger">*</span></label>
                         <div class="col-lg-10">
-                            <input type="text" name="type" class="form-control" placeholder="Enter product type...">
+                            <input type="text" name="type" class="form-control" placeholder="Enter product type..." value="<?=$product->type?>">
                         </div>
                     </div>
 
                     <!-- <div class="form-group row">
                         <label class="col-form-label col-lg-2">Description</label>
                         <div class="col-lg-10">
-                            <textarea type="text" name="description" class="form-control"></textarea>
+                            <textarea type="text" name="description" class="form-control">"</textarea>
                         </div>
                     </div> -->
 
@@ -98,7 +117,7 @@ include_once($partialAdmin . 'head.php');
                         <label class="col-form-label col-lg-2">Cost Price<span class="text-danger">*</span></label>
                         <div class="col-lg-10">
                             <input type="text" name="cost_price" class="form-control"
-                                placeholder="Enter product cost price...">
+                                placeholder="Enter product cost price..." value="<?=$product->cost_price?>">
                         </div>
                     </div>
 
@@ -106,7 +125,7 @@ include_once($partialAdmin . 'head.php');
                         <label class="col-form-label col-lg-2">Sale Price<span class="text-danger">*</span></label>
                         <div class="col-lg-10">
                             <input type="text" name="price" class="form-control"
-                                placeholder="Enter product sell price...">
+                                placeholder="Enter product sell price..." value="<?=$product->price?>">
                         </div>
                     </div>
 
@@ -114,23 +133,16 @@ include_once($partialAdmin . 'head.php');
                         <label class="col-form-label col-lg-2">Image URL<span class="text-danger">*</span></label>
                         <div class="col-lg-10">
                             <input type="url" name="image_URL" class="form-control"
-                                placeholder="Enter product image url...">
+                                placeholder="Enter product image url..." value="<?=$product->src?>">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-form-label col-lg-2">Image alt<span class="text-danger">*</span></label>
                         <div class="col-lg-10">
                             <input type="text" name="image_alt" class="form-control"
-                                placeholder="Enter product image url...">
+                                placeholder="Enter product image url..." value="<?=$product->alt?>">
                         </div>
                     </div>
-                    <!-- <div class="form-group row">
-                    <label class="col-form-label col-lg-2">Image URL</label>
-                    <div class="col-lg-10">
-                        <div class="uniform-uploader"><input type="text" name="image" class="form-control-uniform" data-fouc=""><span class="filename" style="user-select: none;">No file selected</span><span class="action btn btn-light legitRipple" style="user-select: none;">Choose File</span></div>
-                    </div>
-                </div> -->
-
                     <div class="form-group row">
                         <label class="col-form-label col-lg-2">E-sale Enabled</label>
                         <div class="col-lg-10">
@@ -138,7 +150,7 @@ include_once($partialAdmin . 'head.php');
                                 <label class="form-check-label">
                                     Enable
                                     <input type="checkbox" name="e_sale" class="form-check-input-switchery"
-                                        checked="Enable" data-fouc="" data-switchery="true" style="display: none;">
+                                        checked="<?=$product->e_sale? 'Enable' : "Disable"?>" data-fouc="" data-switchery="true" style="display: none;">
                                     Disable
                                 </label>
                             </div>
@@ -152,7 +164,7 @@ include_once($partialAdmin . 'head.php');
                                 <label class="form-check-label">
                                     Enable
                                     <input type="checkbox" name="outdoor" class="form-check-input-switchery"
-                                        checked="Enable" data-fouc="" data-switchery="true" style="display: none;">
+                                        checked="Disable" data-fouc="" data-switchery="true" style="display: none;">
                                     Disable
                                 </label>
                             </div>

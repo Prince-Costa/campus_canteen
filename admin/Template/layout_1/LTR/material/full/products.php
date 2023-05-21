@@ -211,7 +211,7 @@ include_once($partialAdmin . 'head.php');
                                                                 <a class="btn border rounded-round mx-1"
                                                                     href="show_product.php?id=<?= $product->id ?>"><i
                                                                         class="icon-eye"></i></a>
-                                                                <a href="" class="btn border rounded-round mx-1"><i
+                                                                <a href="edit_product.php?id=<?= $product->id ?>" class="btn border rounded-round mx-1"><i
                                                                         class="icon-pencil"></i></a>
                                                                 <form action="DeleteProductController.php" method="post">
                                                                     <input type="hidden" name="id"
@@ -279,7 +279,7 @@ include_once($partialAdmin . 'head.php');
                                                 <a class="btn border rounded-round mx-1"
                                                     href="show_product.php?id=<?= $product->id ?>"><i
                                                         class="icon-eye"></i></a>
-                                                <a href="" class="btn border rounded-round mx-1"><i
+                                                <a href="edit_product.php?id=<?= $product->id ?>" class="btn border rounded-round mx-1"><i
                                                         class="icon-pencil"></i></a>
                                                 <form action="DeleteProductController.php" method="post">
                                                     <input type="hidden" name="id" value="<?= $product->id ?>">
