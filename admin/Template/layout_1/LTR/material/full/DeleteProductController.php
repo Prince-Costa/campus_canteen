@@ -4,7 +4,7 @@ $productsInJson = file_get_contents($dataResources . 'products.json');
 dd($productsInJson);
 $id = $_POST["id"];
 $productsInArry = json_decode($productsInJson);
-// d($productsInArry);
+
 foreach($productsInArry as $key => $product){
         if($product->id == $id){
             break;

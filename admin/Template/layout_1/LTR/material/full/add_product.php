@@ -72,7 +72,7 @@ include_once($partialAdmin.'head.php');
               <div class="content">
             <h3>Add Product</h3>
 
-            <form method="get" action="CreateProductController.php">
+            <form method="post" action="CreateProductController.php">
                 <div class="form-group row">
                     <label class="col-form-label col-lg-2">Title<span class="text-danger">*</span></label>
                     <div class="col-lg-10">

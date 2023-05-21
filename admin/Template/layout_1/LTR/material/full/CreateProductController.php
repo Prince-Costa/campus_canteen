@@ -11,23 +11,23 @@ foreach($products as $product){
 
 $id = $maxId + 1;
 $uuid = "wewqsd";
-$title = $_GET['title'];
-$price = $_GET['price'];
-$src = $_GET['image_URL'];
-$alt = $_GET['image_alt'];
+$title = $_POST['title'];
+$price = $_POST['price'];
+$src = $_POST['image_URL'];
+$alt = $_POST['image_alt'];
 $e_sale = 0;
-if(isset($_GET['e_sale'])){
-    $e_sale = $_GET['e_sale'];
+if(isset($_POST['e_sale'])){
+    $e_sale = $_POST['e_sale'];
 };
 $outdore = 0;
-if(isset($_GET['outdoor'])){
-  $outdore = $_GET['outdoor'];  
+if(isset($_POST['outdoor'])){
+  $outdore = $_POST['outdoor'];  
 };
 
 
-$type = $_GET['type'];
-$cost_price = $_GET['cost_price'];
-$type = $_GET['type'];
+$type = $_POST['type'];
+$cost_price = $_POST['cost_price'];
+$type = $_POST['type'];
 $date = date("Y-m-d H:i:s");
 
 $data = [
@@ -52,6 +52,9 @@ $dataInJson = json_encode($products);
 
 if(file_exists($dataResources . 'products.json')){
     $result = file_put_contents($dataResources . 'products.json',$dataInJson);
+    if($result){
+        redirect("products.php");
+    }
 }else{
     echo "File Not Found";
 }
