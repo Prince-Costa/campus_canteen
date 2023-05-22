@@ -1,20 +1,9 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'config.php');
-$productsInJson = file_get_contents($dataResources . 'products.json');
-$products = json_decode($productsInJson);
-dd($_POST);
-$maxId = 0;
-if (count($products) > 0) {
-    foreach ($products as $product) {
-        if ($product->id > $maxId) {
-            $maxId = $product->id;
-        };
-    };
-}
 
 
-$id = $maxId + 1;
-$uuid = "wewqsd";
+$id = $_POST['id'];
+$uuid = $_POST['uuid'];
 $title = $_POST['title'];
 $price = $_POST['price'];
 $src = $_POST['image_URL'];
@@ -51,6 +40,13 @@ $data = [
     "status" => true,
 ];
 
+$productsInJson = file_get_contents($dataResources . 'products.json');
+$products = json_decode($productsInJson);
+foreach($products as $key => $product){
+    if($product->id == $id){
+        break;
+    }
+}
 
 $products[] = (object) $data;
 

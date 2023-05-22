@@ -124,12 +124,13 @@ include_once($partialAdmin . 'head.php');
                                 placeholder="Enter product image url...">
                         </div>
                     </div>
+                    
                     <!-- <div class="form-group row">
                     <label class="col-form-label col-lg-2">Image URL</label>
                     <div class="col-lg-10">
                         <div class="uniform-uploader"><input type="text" name="image" class="form-control-uniform" data-fouc=""><span class="filename" style="user-select: none;">No file selected</span><span class="action btn btn-light legitRipple" style="user-select: none;">Choose File</span></div>
                     </div>
-                </div> -->
+                    </div> -->
 
                     <div class="form-group row">
                         <label class="col-form-label col-lg-2">E-sale Enabled</label>

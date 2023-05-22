@@ -91,7 +91,9 @@ include_once($partialAdmin . 'head.php');
             <div class="content">
                 <h3>Edit Product</h3>
 
-                <form method="post" action="CreateProductController.php">
+                <form method="post" action="EditProductController.php">
+                    <input name="id" type="hidden" class="form-control"  value="<?=$product->id?>" />
+					<input name="uuid" type="hidden" class="form-control"  value="<?=$product->uuid?>" />
                     <div class="form-group row">
                         <label class="col-form-label col-lg-2">Title<span class="text-danger">*</span></label>
                         <div class="col-lg-10">
@@ -150,7 +152,7 @@ include_once($partialAdmin . 'head.php');
                                 <label class="form-check-label">
                                     Enable
                                     <input type="checkbox" name="e_sale" class="form-check-input-switchery"
-                                        checked="<?=$product->e_sale? 'Enable' : "Disable"?>" data-fouc="" data-switchery="true" style="display: none;">
+                                        <?=$product->e_sale? 'checked' : ""?> data-fouc="" data-switchery="true" style="display: none;">
                                     Disable
                                 </label>
                             </div>
@@ -164,7 +166,7 @@ include_once($partialAdmin . 'head.php');
                                 <label class="form-check-label">
                                     Enable
                                     <input type="checkbox" name="outdoor" class="form-check-input-switchery"
-                                        checked="Disable" data-fouc="" data-switchery="true" style="display: none;">
+                                    <?=$product->outdore? 'checked' : ""?> data-fouc="" data-switchery="true" style="display: none;">
                                     Disable
                                 </label>
                             </div>
