@@ -2,7 +2,7 @@
 include_once($_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'config.php');
 $productsInJson = file_get_contents($dataResources . 'products.json');
 $products = json_decode($productsInJson);
-dd($_POST);
+// dd($_POST);
 $maxId = 0;
 if (count($products) > 0) {
     foreach ($products as $product) {
@@ -11,13 +11,20 @@ if (count($products) > 0) {
         };
     };
 }
+$fileName =uniqid().'_'.$_FILES['image']['name'];
+$from = $_FILES['image']['tmp_name'];
+$destinetion = $uploads.$fileName;
+$src = null;
+if(uploadFile($from, $destinetion)){
+    $src = $fileName;
+}
 
 
 $id = $maxId + 1;
 $uuid = "wewqsd";
 $title = $_POST['title'];
 $price = $_POST['price'];
-$src = $_POST['image_URL'];
+// $src = $fileName;
 $alt = $_POST['image_alt'];
 $e_sale = 0;
 if (isset($_POST['e_sale'])) {
@@ -50,7 +57,6 @@ $data = [
     "date" => $date,
     "status" => true,
 ];
-
 
 $products[] = (object) $data;
 

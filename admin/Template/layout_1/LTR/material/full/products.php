@@ -185,7 +185,7 @@ include_once($partialAdmin . 'head.php');
                                                             <?= $product->title ?>
                                                         </td>
                                                         <td>
-                                                            <img src="<?= $product->src ?>" alt="<?= $product->alt ?>"
+                                                            <img src="<?=filter_var($product->src, FILTER_VALIDATE_URL)?  $product->src : $webroot.'uploads/'. $product->src ?>" alt="<?= $product->alt ?>"
                                                                 style="height:60px; width: 60%;">
                                                         </td>
                                                         <td>

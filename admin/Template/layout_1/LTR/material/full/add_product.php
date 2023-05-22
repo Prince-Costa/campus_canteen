@@ -72,7 +72,7 @@ include_once($partialAdmin . 'head.php');
             <div class="content">
                 <h3>Add Product</h3>
 
-                <form method="post" action="CreateProductController.php">
+                <form method="post" action="CreateProductController.php" enctype="multipart/form-data">
                     <div class="form-group row">
                         <label class="col-form-label col-lg-2">Title<span class="text-danger">*</span></label>
                         <div class="col-lg-10">
@@ -110,13 +110,13 @@ include_once($partialAdmin . 'head.php');
                         </div>
                     </div>
 
-                    <div class="form-group row">
+                    <!-- <div class="form-group row">
                         <label class="col-form-label col-lg-2">Image URL<span class="text-danger">*</span></label>
                         <div class="col-lg-10">
                             <input type="url" name="image_URL" class="form-control"
                                 placeholder="Enter product image url...">
                         </div>
-                    </div>
+                    </div> -->
                     <div class="form-group row">
                         <label class="col-form-label col-lg-2">Image alt<span class="text-danger">*</span></label>
                         <div class="col-lg-10">
@@ -125,12 +125,12 @@ include_once($partialAdmin . 'head.php');
                         </div>
                     </div>
                     
-                    <!-- <div class="form-group row">
-                    <label class="col-form-label col-lg-2">Image URL</label>
+                    <div class="form-group row">
+                    <label class="col-form-label col-lg-2">Image</label>
                     <div class="col-lg-10">
-                        <div class="uniform-uploader"><input type="text" name="image" class="form-control-uniform" data-fouc=""><span class="filename" style="user-select: none;">No file selected</span><span class="action btn btn-light legitRipple" style="user-select: none;">Choose File</span></div>
+                        <div class="uniform-uploader"><input type="file" name="image" class="form-control-uniform" data-fouc=""><span class="filename" style="user-select: none;">No file selected</span><span class="action btn btn-light legitRipple" style="user-select: none;">Choose File</span></div>
                     </div>
-                    </div> -->
+                    </div>
 
                     <div class="form-group row">
                         <label class="col-form-label col-lg-2">E-sale Enabled</label>

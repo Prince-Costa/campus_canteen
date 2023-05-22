@@ -92,19 +92,21 @@ include_once($partialAdmin . 'head.php');
                 <h3>Edit Product</h3>
 
                 <form method="post" action="EditProductController.php">
-                    <input name="id" type="hidden" class="form-control"  value="<?=$product->id?>" />
-					<input name="uuid" type="hidden" class="form-control"  value="<?=$product->uuid?>" />
+                    <input name="id" type="hidden" class="form-control" value="<?= $product->id ?>" />
+                    <input name="uuid" type="hidden" class="form-control" value="<?= $product->uuid ?>" />
                     <div class="form-group row">
                         <label class="col-form-label col-lg-2">Title<span class="text-danger">*</span></label>
                         <div class="col-lg-10">
-                            <input type="text" name="title" class="form-control" placeholder="Enter product title..." value="<?=$product->title?>">
+                            <input type="text" name="title" class="form-control" placeholder="Enter product title..."
+                                value="<?= $product->title ?>">
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label class="col-form-label col-lg-2">Type<span class="text-danger">*</span></label>
                         <div class="col-lg-10">
-                            <input type="text" name="type" class="form-control" placeholder="Enter product type..." value="<?=$product->type?>">
+                            <input type="text" name="type" class="form-control" placeholder="Enter product type..."
+                                value="<?= $product->type ?>">
                         </div>
                     </div>
 
@@ -119,7 +121,7 @@ include_once($partialAdmin . 'head.php');
                         <label class="col-form-label col-lg-2">Cost Price<span class="text-danger">*</span></label>
                         <div class="col-lg-10">
                             <input type="text" name="cost_price" class="form-control"
-                                placeholder="Enter product cost price..." value="<?=$product->cost_price?>">
+                                placeholder="Enter product cost price..." value="<?= $product->cost_price ?>">
                         </div>
                     </div>
 
@@ -127,24 +129,36 @@ include_once($partialAdmin . 'head.php');
                         <label class="col-form-label col-lg-2">Sale Price<span class="text-danger">*</span></label>
                         <div class="col-lg-10">
                             <input type="text" name="price" class="form-control"
-                                placeholder="Enter product sell price..." value="<?=$product->price?>">
+                                placeholder="Enter product sell price..." value="<?= $product->price ?>">
                         </div>
                     </div>
 
-                    <div class="form-group row">
-                        <label class="col-form-label col-lg-2">Image URL<span class="text-danger">*</span></label>
-                        <div class="col-lg-10">
-                            <input type="url" name="image_URL" class="form-control"
-                                placeholder="Enter product image url..." value="<?=$product->src?>">
-                        </div>
-                    </div>
+
                     <div class="form-group row">
                         <label class="col-form-label col-lg-2">Image alt<span class="text-danger">*</span></label>
                         <div class="col-lg-10">
                             <input type="text" name="image_alt" class="form-control"
-                                placeholder="Enter product image url..." value="<?=$product->alt?>">
+                                placeholder="Enter product image url..." value="<?= $product->alt ?>">
                         </div>
                     </div>
+
+                    <div class="form-group row">
+                        <label class="col-form-label col-lg-2"></label>
+                        <div class="col-lg-10">
+                            <img src="<?= $webroot . "uploads/" . $product->src ?>" alt="<?= $product->alt ?>" height="100px">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-form-label col-lg-2">Image</label>
+                        <div class="col-lg-10">
+                            <div class="uniform-uploader"><input type="file" name="image" class="form-control-uniform"
+                                    data-fouc=""><span class="filename" style="user-select: none;">No file
+                                    selected</span><span class="action btn btn-light legitRipple"
+                                    style="user-select: none;">Choose File</span></div>
+                        </div>
+                    </div>
+
                     <div class="form-group row">
                         <label class="col-form-label col-lg-2">E-sale Enabled</label>
                         <div class="col-lg-10">
@@ -152,7 +166,8 @@ include_once($partialAdmin . 'head.php');
                                 <label class="form-check-label">
                                     Enable
                                     <input type="checkbox" name="e_sale" class="form-check-input-switchery"
-                                        <?=$product->e_sale? 'checked' : ""?> data-fouc="" data-switchery="true" style="display: none;">
+                                        <?= $product->e_sale ? 'checked' : "" ?> data-fouc="" data-switchery="true"
+                                        style="display: none;">
                                     Disable
                                 </label>
                             </div>
@@ -166,7 +181,8 @@ include_once($partialAdmin . 'head.php');
                                 <label class="form-check-label">
                                     Enable
                                     <input type="checkbox" name="outdoor" class="form-check-input-switchery"
-                                    <?=$product->outdore? 'checked' : ""?> data-fouc="" data-switchery="true" style="display: none;">
+                                        <?= $product->outdore ? 'checked' : "" ?> data-fouc="" data-switchery="true"
+                                        style="display: none;">
                                     Disable
                                 </label>
                             </div>
