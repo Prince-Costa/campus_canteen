@@ -1,6 +1,8 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'config.php');
 
+$old_image = $_POST['old_image'];
+dd($old_image);
 
 $id = $_POST['id'];
 $uuid = $_POST['uuid'];

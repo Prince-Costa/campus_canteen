@@ -145,17 +145,16 @@ include_once($partialAdmin . 'head.php');
                     <div class="form-group row">
                         <label class="col-form-label col-lg-2"></label>
                         <div class="col-lg-10">
-                            <img src="<?= $webroot . "uploads/" . $product->src ?>" alt="<?= $product->alt ?>" height="100px">
+                            <img src="<?= $webroot . "uploads/" . $product->src ?>" alt="<?= $product->alt ?>"
+                                height="100px">
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label class="col-form-label col-lg-2">Image</label>
                         <div class="col-lg-10">
-                            <div class="uniform-uploader"><input type="text" name="image" class="form-control-uniform"
-                                    data-fouc="" value="<?=$product->src?>"><span class="filename" style="user-select: none;">No file
-                                    selected</span><span class="action btn btn-light legitRipple"
-                                    style="user-select: none;">Choose File</span></div>
+                            <input type="file" name="new_image" class="form-control">
+                            <input type="hidden" name="old_image" value="<?=$product->src?>">
                         </div>
                     </div>
 
