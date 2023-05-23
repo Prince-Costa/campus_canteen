@@ -65,6 +65,7 @@ $dataInJson = json_encode($products);
 if (file_exists($dataResources . 'products.json')) {
     $result = file_put_contents($dataResources . 'products.json', $dataInJson);
     if ($result) {
+        set_session('success','Product created Successfully');
         redirect("products.php");
     }
 } else {

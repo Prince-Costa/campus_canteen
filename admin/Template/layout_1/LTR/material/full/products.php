@@ -74,6 +74,12 @@ include_once($partialAdmin . 'head.php');
 
             <!-- Content area -->
             <div class="content">
+            <?php
+                $message = flush_session('success');
+                if($message):
+			?>
+				<div class="alert alert-success"><?=$message?></div>
+            <?php endif ?>
 
                 <div class="card-body">
                     <div class="card-header header-elements-inline">
@@ -250,6 +256,7 @@ include_once($partialAdmin . 'head.php');
                             <!-- /basic datatable -->
                         </div>
 
+                        <!-- Grid View -->
                         <div class="tab-pane fade" id="basic-tab2">
                             <div class="d-flex mb-0 justify-content-end">
                                 <a class="btn border"><i class="icon-download"></i> Pdf</a>
@@ -260,7 +267,7 @@ include_once($partialAdmin . 'head.php');
                                     <div class="col-sm-6 col-xl-3">
                                         <div class="card">
                                             <div class="card-img-actions mx-1 mt-1">
-                                                <img class="card-img img-fluid" src="<?= $product->src ?>"
+                                                <img class="card-img img-fluid" src="<?=filter_var($product->src, FILTER_VALIDATE_URL)?  $product->src : $webroot.'uploads/'. $product->src ?>"
                                                     alt="<?= $product->alt ?>" style="height:300px; width=100%">
                                             </div>
 
@@ -293,6 +300,7 @@ include_once($partialAdmin . 'head.php');
                                 <?php endforeach ?>
                             </div>
                         </div>
+                        <!-- Grid View End -->
                     </div>
                 </div>
             </div>

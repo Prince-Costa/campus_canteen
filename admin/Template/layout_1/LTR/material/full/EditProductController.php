@@ -6,7 +6,7 @@ $id = $_POST['id'];
 $uuid = $_POST['uuid'];
 $title = $_POST['title'];
 $price = $_POST['price'];
-$src = $_POST['image_URL'];
+$src = $_POST['image'];
 $alt = $_POST['image_alt'];
 $e_sale = 0;
 if (isset($_POST['e_sale'])) {
@@ -39,7 +39,6 @@ $data = [
     "date" => $date,
     "status" => true,
 ];
-
 $productsInJson = file_get_contents($dataResources . 'products.json');
 $products = json_decode($productsInJson);
 foreach($products as $key => $product){
@@ -48,15 +47,16 @@ foreach($products as $key => $product){
     }
 }
 
-$products[] = (object) $data;
+$products[$key] = (object) $data;
 
 $dataInJson = json_encode($products);
 
 if (file_exists($dataResources . 'products.json')) {
     $result = file_put_contents($dataResources . 'products.json', $dataInJson);
     if ($result) {
-        redirect("products.php");
+        set_session('success','Product updated successfully');
+        redirect('products.php');
     }
 } else {
-    echo "File Not Found";
+    echo 'File Not Found';
 }

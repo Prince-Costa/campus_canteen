@@ -91,7 +91,7 @@ include_once($partialAdmin . 'head.php');
             <div class="content">
                 <h3>Edit Product</h3>
 
-                <form method="post" action="EditProductController.php">
+                <form method="post" action="EditProductController.php" enctype="multipart/form-data">
                     <input name="id" type="hidden" class="form-control" value="<?= $product->id ?>" />
                     <input name="uuid" type="hidden" class="form-control" value="<?= $product->uuid ?>" />
                     <div class="form-group row">
@@ -152,8 +152,8 @@ include_once($partialAdmin . 'head.php');
                     <div class="form-group row">
                         <label class="col-form-label col-lg-2">Image</label>
                         <div class="col-lg-10">
-                            <div class="uniform-uploader"><input type="file" name="image" class="form-control-uniform"
-                                    data-fouc=""><span class="filename" style="user-select: none;">No file
+                            <div class="uniform-uploader"><input type="text" name="image" class="form-control-uniform"
+                                    data-fouc="" value="<?=$product->src?>"><span class="filename" style="user-select: none;">No file
                                     selected</span><span class="action btn btn-light legitRipple"
                                     style="user-select: none;">Choose File</span></div>
                         </div>

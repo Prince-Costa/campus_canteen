@@ -18,6 +18,7 @@ $dataInJson = json_encode($productsInArry);
 if(file_exists($dataResources . 'products.json')){
     $result = file_put_contents($dataResources . 'products.json',$dataInJson);
     if($result){
+        set_session('success','Product deleted successfilly');
         redirect("products.php");
     }
 }else{
