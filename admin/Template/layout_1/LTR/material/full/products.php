@@ -95,7 +95,8 @@ include_once($partialAdmin . 'head.php');
                     <div class="tab-content">
                         <div class="tab-pane fade active show" id="basic-tab1">
                             <div class="d-flex mb-0 justify-content-end">
-                                <a class="btn border"><i class="icon-download"></i> Pdf</a>
+                                <a href="products_pdf_view.php" class="btn border" target="_blank"><i class="icon-eye"></i> Pdf View</a>
+                                <a href="products_pdf_download.php" class="btn border"><i class="icon-download"></i> Pdf</a>
                                 <a class="btn border"><i class="icon-download"></i> Excl</a>
                             </div>
                             <div class="card p-3">
@@ -216,15 +217,16 @@ include_once($partialAdmin . 'head.php');
                                                             <div class="d-flex">
                                                                 <a class="btn border rounded-round mx-1"
                                                                     href="show_product.php?id=<?= $product->id ?>"><i
-                                                                        class="icon-eye"></i></a>
+                                                                        class="icon-eye text-primary"></i></a>
                                                                 <a href="edit_product.php?id=<?= $product->id ?>"
                                                                     class="btn border rounded-round mx-1"><i
-                                                                        class="icon-pencil"></i></a>
+                                                                        class="icon-pencil text-info"></i></a>
                                                                 <form action="DeleteProductController.php" method="post">
                                                                     <input type="hidden" name="id"
                                                                         value="<?= $product->id ?>">
+                                                                        <input type="hidden" name="old_image" value="<?= $product->src ?>">
                                                                     <button class="btn border rounded-round mx-1"><i
-                                                                            class="icon-trash"></i></button>
+                                                                            class="icon-trash text-danger"></i></button>
                                                                 </form>
                                                             </div>
                                                         </td>
@@ -259,6 +261,7 @@ include_once($partialAdmin . 'head.php');
                         <!-- Grid View -->
                         <div class="tab-pane fade" id="basic-tab2">
                             <div class="d-flex mb-0 justify-content-end">
+                                <a href="products_pdf_view.php" class="btn border" target="_blank"><i class="icon-eye"></i> Pdf View</a>
                                 <a class="btn border"><i class="icon-download"></i> Pdf</a>
                                 <a class="btn border"><i class="icon-download"></i> Excl</a>
                             </div>
@@ -286,13 +289,14 @@ include_once($partialAdmin . 'head.php');
                                             <div class="d-flex justify-content-between p-3">
                                                 <a class="btn border rounded-round mx-1"
                                                     href="show_product.php?id=<?= $product->id ?>"><i
-                                                        class="icon-eye"></i></a>
+                                                        class="icon-eye text-primary"></i></a>
                                                 <a href="edit_product.php?id=<?= $product->id ?>"
-                                                    class="btn border rounded-round mx-1"><i class="icon-pencil"></i></a>
+                                                    class="btn border rounded-round mx-1"><i class="icon-pencil text-info"></i></a>
                                                 <form action="DeleteProductController.php" method="post">
                                                     <input type="hidden" name="id" value="<?= $product->id ?>">
+                                                    <input type="hidden" name="old_image" value="<?= $product->src ?>">
                                                     <button class="btn border rounded-round mx-1"><i
-                                                            class="icon-trash"></i></button>
+                                                            class="icon-trash text-danger"></i></button>
                                                 </form>
                                             </div>
                                         </div>
