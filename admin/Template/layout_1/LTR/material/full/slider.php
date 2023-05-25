@@ -1,7 +1,7 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'config.php');
-$productsInJson = file_get_contents($dataResources . 'products.json');
-$products = json_decode($productsInJson);
+$slidersInJson = file_get_contents($dataResources . 'slider.json');
+$sliders = json_decode($slidersInJson);
 ?>
 
 <!DOCTYPE html>
@@ -83,9 +83,62 @@ include_once($partialAdmin . 'top_nav.php');
 
             <div class="card-body">
                 <div class="card-header header-elements-inline">
-                    <h5 class="card-title">Products</h5>
-                    <a href="add_product.php" class="btn btn-info legitRipple">Add Product</a>
+                    <h5 class="card-title">Slider Images</h5>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-light legitRipple" data-toggle="modal" data-target="#modal_default"><i class="icon-plus2 ml-2"></i> Add Slider </button>
                 </div>
+
+
+                <div id="modal_default" class="modal fade" tabindex="-1" aria-hidden="true" style="display: none;">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <form action="">
+
+
+                            <div class="modal-header">
+                                <h5 class="modal-title">Add Slider</h5>
+                                <button type="button" class="close" data-dismiss="modal">×</button>
+                            </div>
+
+                            <div class="modal-body">
+                                <div class="form-group row">
+                                    <label class="col-form-label col-lg-2">Title<span class="text-danger">*</span></label>
+                                    <div class="col-lg-10">
+                                        <input type="text" name="title" class="form-control" placeholder="Enter slider title...">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-form-label col-lg-2">Description<span class="text-danger">*</span></label>
+                                    <div class="col-lg-10">
+                                        <input type="text" name="description" class="form-control" placeholder="Enter slider description...">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-form-label col-lg-2">Image ALT</label>
+                                    <div class="col-lg-10">
+                                        <input type="text" name="alt" class="form-control" placeholder="Enter slider image alt...">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-form-label col-lg-2">Image</label>
+                                    <div class="col-lg-10">
+                                        <input type="file" name="image">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-link legitRipple" data-dismiss="modal">Close<div class="legitRipple-ripple" style="left: 50.5862%; top: 54.5641%; transform: translate3d(-50%, -50%, 0px); width: 225.28%; opacity: 0;"></div><div class="legitRipple-ripple" style="left: 64.2294%; top: 44.0378%; transform: translate3d(-50%, -50%, 0px); width: 225.28%; opacity: 0;"></div></button>
+                                <button type="submit" class="btn bg-primary legitRipple">Save changes</button>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
                 <ul class="nav nav-tabs mb-0">
                     <li class="nav-item"><a href="#basic-tab1" class="nav-link active" data-toggle="tab">List
                             View</a></li>
@@ -118,21 +171,21 @@ include_once($partialAdmin . 'top_nav.php');
                                                 <option value="50">50</option>
                                                 <option value="100">100</option>
                                             </select><span
-                                                    class="select2 select2-container select2-container--default"
-                                                    dir="ltr" data-select2-id="2" style="width: auto;"><span
-                                                        class="selection"><span
-                                                            class="select2-selection select2-selection--single"
-                                                            role="combobox" aria-haspopup="true" aria-expanded="false"
-                                                            tabindex="0" aria-disabled="false"
-                                                            aria-labelledby="select2-DataTables_Table_0_length-g1-container"><span
-                                                                class="select2-selection__rendered"
-                                                                id="select2-DataTables_Table_0_length-g1-container"
-                                                                role="textbox" aria-readonly="true"
-                                                                title="10">10</span><span
-                                                                class="select2-selection__arrow" role="presentation"><b
-                                                                    role="presentation"></b></span></span></span><span
-                                                        class="dropdown-wrapper"
-                                                        aria-hidden="true"></span></span></label>
+                                                class="select2 select2-container select2-container--default"
+                                                dir="ltr" data-select2-id="2" style="width: auto;"><span
+                                                    class="selection"><span
+                                                        class="select2-selection select2-selection--single"
+                                                        role="combobox" aria-haspopup="true" aria-expanded="false"
+                                                        tabindex="0" aria-disabled="false"
+                                                        aria-labelledby="select2-DataTables_Table_0_length-g1-container"><span
+                                                            class="select2-selection__rendered"
+                                                            id="select2-DataTables_Table_0_length-g1-container"
+                                                            role="textbox" aria-readonly="true"
+                                                            title="10">10</span><span
+                                                            class="select2-selection__arrow" role="presentation"><b
+                                                                role="presentation"></b></span></span></span><span
+                                                    class="dropdown-wrapper"
+                                                    aria-hidden="true"></span></span></label>
                                     </div>
                                 </div>
                                 <div class="datatable-scroll">
@@ -150,31 +203,14 @@ include_once($partialAdmin . 'top_nav.php');
                                                 aria-sort="ascending"
                                                 aria-label="First Name: activate to sort column descending">Name
                                             </th>
+                                            <th class="sorting_asc" tabindex="0"
+                                                aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
+                                                aria-sort="ascending"
+                                                aria-label="First Name: activate to sort column descending">Description
+                                            </th>
                                             <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
                                                 rowspan="1" colspan="1"
                                                 aria-label="Last Name: activate to sort column ascending">Image
-                                            </th>
-                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
-                                                rowspan="1" colspan="1"
-                                                aria-label="Last Name: activate to sort column ascending">
-                                                Category
-                                            </th>
-                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
-                                                rowspan="1" colspan="1"
-                                                aria-label="Job Title: activate to sort column ascending">Price
-                                            </th>
-                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
-                                                rowspan="1" colspan="1"
-                                                aria-label="DOB: activate to sort column ascending">Date
-                                            </th>
-                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
-                                                rowspan="1" colspan="1"
-                                                aria-label="Job Title: activate to sort column ascending">E-sale
-                                            </th>
-                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
-                                                rowspan="1" colspan="1"
-                                                aria-label="Job Title: activate to sort column ascending">
-                                                Outdore
                                             </th>
                                             <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
                                                 rowspan="1" colspan="1"
@@ -187,53 +223,42 @@ include_once($partialAdmin . 'top_nav.php');
                                         </thead>
                                         <tbody>
                                         <?php
-                                        foreach ($products as $key => $product):
+                                        foreach ($sliders as $key => $slider):
                                             ?>
                                             <tr role="row" class="odd">
                                                 <td class="">
                                                     <?= ++$key ?>
                                                 </td>
                                                 <td class="sorting_1">
-                                                    <?= $product->title ?>
+                                                    <?= $slider->title ?>
+                                                </td>
+                                                <td class="sorting_1">
+                                                    <?= $slider->description ?>
                                                 </td>
                                                 <td>
-                                                    <img src="<?= filter_var($product->src, FILTER_VALIDATE_URL) ? $product->src : $webroot . 'uploads/' . $product->src ?>"
-                                                         alt="<?= $product->alt ?>"
+                                                    <img src="<?= filter_var($slider->src, FILTER_VALIDATE_URL) ? $slider->src : $webroot . 'uploads/' . $slider->src ?>"
+                                                         alt="<?= $slider->alt ?>"
                                                          style="height:60px; width: 60%;">
                                                 </td>
+
                                                 <td>
-                                                    <?= $product->type ?>
-                                                </td>
-                                                <td>
-                                                    <?= $product->price ?>
-                                                </td>
-                                                <td>
-                                                    <?= $product->date ?>
-                                                </td>
-                                                <td><span
-                                                            class="badge <?php echo($product->e_sale ? 'badge-success' : 'badge-danger') ?>"><?php echo($product->e_sale ? 'Active' : 'Inective') ?></span>
-                                                </td>
-                                                <td><span
-                                                            class="badge <?php echo($product->outdore ? 'badge-success' : 'badge-danger') ?>"><?php echo($product->outdore ? 'Active' : 'Inective') ?></span>
-                                                </td>
-                                                <td><span
-                                                            class="badge <?php echo($product->status ? 'badge-success' : 'badge-danger') ?>"><?php echo($product->status ? 'Active' : 'Inective') ?></span>
+                                                    <span class="badge <?php echo($slider->status ? 'badge-success' : 'badge-danger') ?>"><?php echo($slider->status ? 'Active' : 'Inective') ?></span>
                                                 </td>
                                                 <td class="text-center">
                                                     <div class="d-flex">
                                                         <a class="btn border rounded-round mx-1"
-                                                           href="show_product.php?id=<?= $product->id ?>"><i
-                                                                    class="icon-eye text-primary"></i></a>
-                                                        <a href="edit_product.php?id=<?= $product->id ?>"
+                                                           href="show_product.php?id=<?= $slider->id ?>"><i
+                                                                class="icon-eye text-primary"></i></a>
+                                                        <a href="edit_product.php?id=<?= $slider->id ?>"
                                                            class="btn border rounded-round mx-1"><i
-                                                                    class="icon-pencil text-info"></i></a>
+                                                                class="icon-pencil text-info"></i></a>
                                                         <form action="DeleteProductController.php" method="post" onclick="return confirm('Are you sure you want to delete this item')">
                                                             <input type="hidden" name="id"
-                                                                   value="<?= $product->id ?>">
+                                                                   value="<?= $slider->id ?>">
                                                             <input type="hidden" name="old_image"
-                                                                   value="<?= $product->src ?>">
+                                                                   value="<?= $slider->src ?>">
                                                             <button class="btn border rounded-round mx-1"><i
-                                                                        class="icon-trash text-danger"></i></button>
+                                                                    class="icon-trash text-danger"></i></button>
                                                         </form>
                                                     </div>
                                                 </td>
@@ -251,17 +276,17 @@ include_once($partialAdmin . 'top_nav.php');
                                     </div>
                                     <div class="dataTables_paginate paging_simple_numbers"
                                          id="DataTables_Table_0_paginate"><a
-                                                class="paginate_button previous disabled"
-                                                aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0"
-                                                id="DataTables_Table_0_previous">←</a><span><a
-                                                    class="paginate_button current" aria-controls="DataTables_Table_0"
-                                                    data-dt-idx="1" tabindex="0">1</a><a class="paginate_button "
-                                                                                         aria-controls="DataTables_Table_0"
-                                                                                         data-dt-idx="2"
-                                                                                         tabindex="0">2</a></span><a
-                                                class="paginate_button next"
-                                                aria-controls="DataTables_Table_0" data-dt-idx="3" tabindex="0"
-                                                id="DataTables_Table_0_next">→</a>
+                                            class="paginate_button previous disabled"
+                                            aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0"
+                                            id="DataTables_Table_0_previous">←</a><span><a
+                                                class="paginate_button current" aria-controls="DataTables_Table_0"
+                                                data-dt-idx="1" tabindex="0">1</a><a class="paginate_button "
+                                                                                     aria-controls="DataTables_Table_0"
+                                                                                     data-dt-idx="2"
+                                                                                     tabindex="0">2</a></span><a
+                                            class="paginate_button next"
+                                            aria-controls="DataTables_Table_0" data-dt-idx="3" tabindex="0"
+                                            id="DataTables_Table_0_next">→</a>
                                     </div>
                                 </div>
                             </div>
@@ -278,39 +303,39 @@ include_once($partialAdmin . 'top_nav.php');
                             <a class="btn border"><i class="icon-download"></i> Excl</a>
                         </div>
                         <div class="row mx-o">
-                            <?php foreach ($products as $key => $product): ?>
+                            <?php foreach ($sliders as $key => $slider): ?>
                                 <div class="col-sm-6 col-xl-3">
                                     <div class="card">
                                         <div class="card-img-actions mx-1 mt-1">
                                             <img class="card-img img-fluid"
-                                                 src="<?= filter_var($product->src, FILTER_VALIDATE_URL) ? $product->src : $webroot . 'uploads/' . $product->src ?>"
-                                                 alt="<?= $product->alt ?>" style="height:300px; width=100%">
+                                                 src="<?= filter_var($slider->src, FILTER_VALIDATE_URL) ? $slider->src : $webroot . 'uploads/' . $slider->src ?>"
+                                                 alt="<?= $slider->alt ?>" style="height:300px; width=100%">
                                         </div>
 
                                         <div class="card-body">
                                             <div class="d-flex align-items-start flex-nowrap">
                                                 <div>
                                                     <div class="font-weight-semibold mr-2">
-                                                        <?= $product->title ?>
+                                                        <?= $slider->title ?>
                                                     </div>
                                                     <span class="font-size-sm text-muted">
-                                                            <?= $product->price ?>
+                                                            <?= $slider->description ?>
                                                         </span>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="d-flex justify-content-between p-3">
                                             <a class="btn border rounded-round mx-1"
-                                               href="show_product.php?id=<?= $product->id ?>"><i
-                                                        class="icon-eye text-primary"></i></a>
-                                            <a href="edit_product.php?id=<?= $product->id ?>"
+                                               href="show_product.php?id=<?= $slider->id ?>"><i
+                                                    class="icon-eye text-primary"></i></a>
+                                            <a href="edit_product.php?id=<?= $slider->id ?>"
                                                class="btn border rounded-round mx-1"><i
-                                                        class="icon-pencil text-info"></i></a>
+                                                    class="icon-pencil text-info"></i></a>
                                             <form action="DeleteProductController.php" method="post" onclick="return confirm('Are you sure you want to delete this item')">
-                                                <input type="hidden" name="id" value="<?= $product->id ?>">
-                                                <input type="hidden" name="old_image" value="<?= $product->src ?>">
+                                                <input type="hidden" name="id" value="<?= $slider->id ?>">
+                                                <input type="hidden" name="old_image" value="<?= $slider->src ?>">
                                                 <button class="btn border rounded-round mx-1"><i
-                                                            class="icon-trash text-danger"></i></button>
+                                                        class="icon-trash text-danger"></i></button>
                                             </form>
                                         </div>
                                     </div>

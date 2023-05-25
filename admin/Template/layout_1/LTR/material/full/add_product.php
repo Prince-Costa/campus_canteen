@@ -126,10 +126,10 @@ include_once($partialAdmin . 'head.php');
                     </div>
                     
                     <div class="form-group row">
-                    <label class="col-form-label col-lg-2">Image</label>
-                    <div class="col-lg-10">
-                        <div class="uniform-uploader"><input type="file" name="image" class="form-control-uniform" data-fouc=""><span class="filename" style="user-select: none;">No file selected</span><span class="action btn btn-light legitRipple" style="user-select: none;">Choose File</span></div>
-                    </div>
+                        <label class="col-form-label col-lg-2">Image</label>
+                        <div class="col-lg-10">
+                            <input type="file" name="image">
+                        </div>
                     </div>
 
                     <div class="form-group row">
