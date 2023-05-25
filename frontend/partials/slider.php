@@ -29,7 +29,7 @@ $silderDatas = json_decode($jsonFormetedSilderData);
                 }
             ?>
             <div class="carousel-item <?=$active?>">
-                <img src="<?=$slider->src?>" class="d-block w-100" alt="<?=$slider->alt?>">
+                <img src="<?= filter_var($slider->src, FILTER_VALIDATE_URL) ? $slider->src : $webroot . 'uploads/' . $slider->src ?>" class="d-block w-100" alt="<?=$slider->alt?>">
                     <div class="carousel-caption ">
                         <h5 style="color: white;"><?=$slider->title ?></h5>
                         <p style="color: white;"><?=$slider->description ?></p>
