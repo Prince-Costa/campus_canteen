@@ -120,7 +120,7 @@ include_once($partialAdmin . 'head.php');
                     <div class="form-group row">
                         <label class="col-form-label col-lg-2"></label>
                         <div class="col-lg-10">
-                            <img src="<?= $slider->src ?>" alt="" height="100px">
+                            <img src="<?= $webroot . "uploads/" . $slider->src ?>" alt="<?= $slider->alt ?>" alt="" height="100px">
                         </div>
                     </div>
 

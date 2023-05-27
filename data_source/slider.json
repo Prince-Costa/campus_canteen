@@ -3,54 +3,27 @@
     "title": "Title 1",
     "alt": "Image 1",
     "description": "Description 1",
-    "src": "https:\/\/img.freepik.com\/free-psd\/fast-food-concept-banner-template_23-2148777965.jpg",
+    "src": "Screenshot-2023-05-26-134721.png",
     "status": true,
     "id": 1,
     "uuid": "dqwe"
   },
   {
-    "title": "Title 2",
-    "alt": "Image 2",
-    "description": "Description 2",
-    "src": "https:\/\/c8.alamy.com\/comp\/2C1A20G\/banner-raw-uncooked-ingredients-for-cooking-pasta-cooking-background-food-banner-2C1A20G.jpg",
-    "status": true,
-    "id": 2,
-    "uuid": "dQD"
-  },
-  {
     "title": "Title 3",
     "alt": "Image 3",
     "description": "Description 3",
-    "src": "https:\/\/i.ytimg.com\/vi\/mnCDSmooRxA\/maxresdefault.jpg",
+    "src": "Screenshot-2023-05-26-134400.png",
     "status": true,
     "id": 3,
     "uuid": "DWQde"
-  },
-  {
-    "title": "Title 4",
-    "alt": "Image 4",
-    "description": "Description 4",
-    "src": "https:\/\/graphicsfamily.com\/wp-content\/uploads\/edd\/2022\/02\/Free-Food-Advertising-Banner-Template.jpg",
-    "status": true,
-    "id": 4,
-    "uuid": "fwD3r32"
   },
   {
     "id": 5,
     "uuid": "wewqsd5",
     "title": "Title 5",
     "description": "Description 5",
-    "src": "646ef36c5154c_Screenshot 2023-05-25 113414.png",
+    "src": "64706cde7bd8a_Screenshot 2023-05-26 134100.png",
     "alt": "image 5",
-    "status": true
-  },
-  {
-    "id": 6,
-    "uuid": "wewqsd6",
-    "title": "Title 22",
-    "description": "Description 22",
-    "src": "646efbf982549_",
-    "alt": "Image 22",
     "status": true
   }
 ]

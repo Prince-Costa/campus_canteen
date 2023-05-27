@@ -4,17 +4,17 @@ $productsInJson = file_get_contents($dataResources . 'products.json');
 
 $id = $_POST["id"];
 $old_picture = $_POST["old_image"];
-$productsInArry = json_decode($productsInJson);
+$productsInArray = json_decode($productsInJson);
 
-foreach($productsInArry as $key => $product){
+foreach($productsInArray as $key => $product){
         if($product->id == $id){
             break;
         }
 };
 
-array_splice($productsInArry, $key, 1);
+array_splice($productsInArray, $key, 1);
 
-$dataInJson = json_encode($productsInArry);
+$dataInJson = json_encode($productsInArray);
 
 if(file_exists($dataResources . 'products.json')){
     $result = file_put_contents($dataResources . 'products.json',$dataInJson);
@@ -22,7 +22,7 @@ if(file_exists($dataResources . 'products.json')){
         unlink( $uploads.$old_picture );
     }
     if($result){
-        set_session('success','Product deleted successfilly');
+        set_session('success','Product deleted successfully');
         redirect("products.php");
     }
 }else{

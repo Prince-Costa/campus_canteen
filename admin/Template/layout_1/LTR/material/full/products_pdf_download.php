@@ -54,10 +54,6 @@ PRODUCT;
 
 	$slideHTMLList = $productsHTMLStart.$productHTMLContent.$productHTMLEnd;
 
-//	echo $slideHTMLList;
-
-//dd($slideHTMLList);
-
 	$mpdf = new \Mpdf\Mpdf();
 	$mpdf->WriteHTML($slideHTMLList);
 	$mpdf->Output();

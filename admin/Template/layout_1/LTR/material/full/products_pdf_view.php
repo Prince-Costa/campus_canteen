@@ -53,8 +53,6 @@ include_once($partialAdmin . 'head.php');
                         rowspan="1" colspan="1"
                         aria-label="Status: activate to sort column ascending">Status
                     </th>
-                    <th class="text-center sorting_disabled" rowspan="1" colspan="1"
-                        aria-label="Actions" style="width: 100px;">Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -70,7 +68,7 @@ include_once($partialAdmin . 'head.php');
                         </td>
                         <td>
                             <img src="<?=filter_var($product->src, FILTER_VALIDATE_URL)?  $product->src : $webroot.'uploads/'. $product->src ?>" alt="<?= $product->alt ?>"
-                                style="height:60px; width: 60%;">
+                                style="height:60px; width: auto;">
                         </td>
                         <td>
                             <?= $product->type ?>
@@ -89,23 +87,6 @@ include_once($partialAdmin . 'head.php');
                         </td>
                         <td><span
                                 class="badge <?php echo ($product->status ? 'badge-success' : 'badge-danger') ?>"><?php echo ($product->status ? 'Active' : 'Inective') ?></span>
-                        </td>
-                        <td class="text-center">
-                            <div class="d-flex">
-                                <a class="btn border rounded-round mx-1"
-                                    href="show_product.php?id=<?= $product->id ?>"><i
-                                        class="icon-eye text-primary"></i></a>
-                                <a href="edit_product.php?id=<?= $product->id ?>"
-                                    class="btn border rounded-round mx-1"><i
-                                        class="icon-pencil text-info"></i></a>
-                                <form action="DeleteProductController.php" method="post">
-                                    <input type="hidden" name="id"
-                                        value="<?= $product->id ?>">
-                                        <input type="hidden" name="old_image" value="<?= $product->src ?>">
-                                    <button class="btn border rounded-round mx-1"><i
-                                            class="icon-trash text-danger"></i></button>
-                                </form>
-                            </div>
                         </td>
                     </tr>
                     <?php

@@ -103,11 +103,11 @@ include_once($partialAdmin . 'head.php');
                     <div class="tab-content">
                         <div class="tab-pane fade active show" id="basic-tab1">
                             <div class="d-flex mb-0 justify-content-end">
-                                <a class="btn border" target="_blank"><i class="icon-eye"></i>
+                                <a href="slider_pdf_view.php" class="btn border" target="_blank"><i class="icon-eye"></i>
                                     Pdf View</a>
-                                <a class="btn border"><i class="icon-download"></i>
+                                <a href="sliders_pdf_download.php" class="btn border"><i class="icon-download"></i>
                                     Pdf</a>
-                                <a class="btn border"><i class="icon-download"></i> Excl</a>
+                                <a href="sliders_excel_download.php" class="btn border"><i class="icon-download"></i>Excl</a>
                             </div>
                             <div class="card p-3">
                                 <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper no-footer">
@@ -253,10 +253,11 @@ include_once($partialAdmin . 'head.php');
                         <!-- Grid View -->
                         <div class="tab-pane fade" id="basic-tab2">
                             <div class="d-flex mb-0 justify-content-end">
-                                <a class="btn border" target="_blank"><i class="icon-eye"></i>
+                                <a href="slider_pdf_view.php" class="btn border" target="_blank"><i class="icon-eye"></i>
                                     Pdf View</a>
-                                <a class="btn border"><i class="icon-download"></i> Pdf</a>
-                                <a class="btn border"><i class="icon-download"></i> Excl</a>
+                                <a href="sliders_pdf_download.php" class="btn border"><i class="icon-download"></i>
+                                    Pdf</a>
+                                <a href="sliders_excel_download.php" class="btn border"><i class="icon-download"></i> Excel</a>
                             </div>
                             <div class="row mx-o">
                                 <?php foreach ($sliders as $key => $slider): ?>
@@ -370,7 +371,7 @@ include_once($partialAdmin . 'head.php');
                                 style="left: 64.2294%; top: 44.0378%; transform: translate3d(-50%, -50%, 0px); width: 225.28%; opacity: 0;">
                             </div>
                         </button>
-                        <button type="submit" class="btn bg-primary legitRipple">Save changes</button>
+                        <button type="submit" class="btn bg-primary legitRipple">Save</button>
                     </div>
                 </form>
             </div>

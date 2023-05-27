@@ -1,12 +1,12 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'config.php');
-$productsInJson = file_get_contents($dataResources . 'products.json');
-$products = json_decode($productsInJson);
+$sliderInJson = file_get_contents($dataResources . 'slider.json');
+$sliders = json_decode($sliderInJson);
 $id = $_GET['id'];
-$product = '';
-foreach ($products as $key => $singleProduct) {
-    if ($singleProduct->id == $id) {
-        $product = $singleProduct;
+$slider = '';
+foreach ($sliders as $key => $singleSlider) {
+    if ($singleSlider->id == $id) {
+        $slider = $singleSlider;
     }
     ;
 }
@@ -93,7 +93,7 @@ include_once($partialAdmin . 'head.php');
                 <div class="">
                     <div class="card">
                         <div class="card-img-actions mx-1 mt-1">
-                            <img class="card-img img-fluid" src="<?= $product->src ?>" alt="<?= $product->alt ?>"
+                            <img class="card-img img-fluid" src="<?= filter_var($slider->src, FILTER_VALIDATE_URL) ? $slider->src : $webroot . 'uploads/' . $slider->src ?>" alt="<?= $slider->alt ?>"
                                 style="height:500px; width=100%">
                         </div>
 
@@ -101,17 +101,23 @@ include_once($partialAdmin . 'head.php');
                             <div class="d-flex align-items-start flex-nowrap">
                                 <div>
                                     <div class="font-weight-semibold mr-2">
-                                        <?= $product->title ?>
+                                        <?= $slider->title ?>
                                     </div>
-                                    <span class="font-size-sm text-muted">
-                                        <?= $product->price ?>
-                                    </span>
                                 </div>
                             </div>
                         </div>
                         <div class="d-flex justify-content-between p-3">
-                            <a class="btn btn-info" href="">Edit</a>
-                            <a class="btn btn-danger" href="">Delete</a>
+                            <a href="edit_slider.php?id=<?= $slider->id ?>"
+                               class="btn border rounded-round mx-1"><i
+                                        class="icon-pencil text-info"></i></a>
+                            <form action="DeleteSliderController.php" method="post" onclick="return confirm('Are you sure you want to delete this item')">
+                                <input type="hidden" name="id"
+                                       value="<?= $slider->id ?>">
+                                <input type="hidden" name="old_image"
+                                       value="<?= $slider->src ?>">
+                                <button class="btn border rounded-round mx-1"><i
+                                            class="icon-trash text-danger"></i></button>
+                            </form>
                         </div>
                     </div>
                 </div>

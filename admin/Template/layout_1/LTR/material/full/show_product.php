@@ -93,7 +93,7 @@ include_once($partialAdmin . 'head.php');
                 <div class="">
                     <div class="card">
                         <div class="card-img-actions mx-1 mt-1">
-                            <img class="card-img img-fluid" src="<?= $product->src ?>" alt="<?= $product->alt ?>"
+                            <img class="card-img img-fluid" src="<?= filter_var($product->src, FILTER_VALIDATE_URL) ? $product->src : $webroot . 'uploads/' . $product->src ?>" alt="<?= $product->alt ?>"
                                 style="height:500px; width=100%">
                         </div>
 
@@ -110,8 +110,17 @@ include_once($partialAdmin . 'head.php');
                             </div>
                         </div>
                         <div class="d-flex justify-content-between p-3">
-                            <a class="btn btn-info" href="">Edit</a>
-                            <a class="btn btn-danger" href="">Delete</a>
+                            <a href="edit_product.php?id=<?= $product->id ?>"
+                               class="btn border rounded-round mx-1"><i
+                                        class="icon-pencil text-info"></i></a>
+                            <form action="DeleteProductController.php" method="post" onclick="return confirm('Are you sure you want to delete this item')">
+                                <input type="hidden" name="id"
+                                       value="<?= $product->id ?>">
+                                <input type="hidden" name="old_image"
+                                       value="<?= $product->src ?>">
+                                <button class="btn border rounded-round mx-1"><i
+                                            class="icon-trash text-danger"></i></button>
+                            </form>
                         </div>
                     </div>
                 </div>
