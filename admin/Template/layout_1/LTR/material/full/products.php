@@ -98,7 +98,8 @@ include_once($partialAdmin . 'top_nav.php');
                             <a href="products_pdf_view.php" class="btn border" target="_blank"><i class="icon-eye"></i>
                                 Pdf View</a>
                             <a href="products_pdf_download.php" class="btn border"><i class="icon-download"></i> Pdf</a>
-                            <a class="btn border"><i class="icon-download"></i> Excl</a>
+                            <a href="products_excel_download.php" class="btn border"><i class="icon-download"></i> Excel</a>
+                            <a href="sendMail.php" class="btn border"><i class="icon-email"></i>Email</a>
                         </div>
                         <div class="card p-3">
                             <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper no-footer">
@@ -275,7 +276,7 @@ include_once($partialAdmin . 'top_nav.php');
                             <a href="products_pdf_view.php" class="btn border" target="_blank"><i class="icon-eye"></i>
                                 Pdf View</a>
                             <a class="btn border"><i class="icon-download"></i> Pdf</a>
-                            <a class="btn border"><i class="icon-download"></i> Excl</a>
+                            <a href="products_excel_download.php" class="btn border"><i class="icon-download"></i> Excel</a>
                         </div>
                         <div class="row mx-o">
                             <?php foreach ($products as $key => $product): ?>

@@ -6,7 +6,7 @@ $sliders = json_decode($sliderInJson);
 
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
-use PhpOffice\PhpSpreadsheet\IOFactory;
+// use PhpOffice\PhpSpreadsheet\IOFactory;
 use PhpOffice\PhpSpreadsheet\Worksheet\Drawing;
 
 // Create a new Spreadsheet object
@@ -33,10 +33,12 @@ foreach ($sliders as $key=> $slider) {
     $drawing->setName('Image');
     $drawing->setDescription('Image');
     $drawing->setPath($imagePath);
-    $drawing->setCoordinates('D' . $fieldValue);
+    $drawing->setCoordinates('D'.$fieldValue);
     $drawing->setHeight(30);
     $drawing->setWidth(40);
     $drawing->setWorksheet($sheet);
+
+
     $sheet->setCellValue('E'.$fieldValue, ($slider->status? 'Active' : 'inactive'));
 }
 
