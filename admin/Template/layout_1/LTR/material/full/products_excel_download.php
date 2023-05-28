@@ -6,7 +6,7 @@ $products = json_decode($productsInJson);
 
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
-use PhpOffice\PhpSpreadsheet\IOFactory;
+// use PhpOffice\PhpSpreadsheet\IOFactory;
 use PhpOffice\PhpSpreadsheet\Worksheet\Drawing;
 
 // Create a new Spreadsheet object
@@ -34,7 +34,7 @@ foreach ($products as $key=> $product) {
     $sheet->setCellValue('E'.$fieldValue, $product->type);
 
     // Add image
-    $imagePath = filter_var($product->src, FILTER_VALIDATE_URL) ? $product->src : $uploads.$product->src ;
+    $imagePath = $uploads.$product->src ;
     $drawing = new Drawing();
     $drawing->setName('Image');
     $drawing->setDescription('Image');
@@ -43,6 +43,7 @@ foreach ($products as $key=> $product) {
     $drawing->setHeight(30);
     $drawing->setWidth(40);
     $drawing->setWorksheet($sheet);
+
     $sheet->setCellValue('G'.$fieldValue, ($product->e_sale? 'Active' : 'inactive'));
     $sheet->setCellValue('H'.$fieldValue, ($product->outdore? 'Active' : 'inactive'));
     $sheet->setCellValue('I'.$fieldValue, ($product->status? 'Active' : 'inactive'));
