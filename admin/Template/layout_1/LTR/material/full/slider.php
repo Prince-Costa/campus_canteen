@@ -1,5 +1,9 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'config.php');
+// use App\Slider;
+
+// dd(Slider::sliders());
+
 $slidersInJson = file_get_contents($dataResources . 'slider.json');
 $sliders = json_decode($slidersInJson);
 ?>
