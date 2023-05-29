@@ -44,9 +44,9 @@ class ComposerStaticInit8f14b2846775ba2ed872dc72dd789510
         array (
             'Complex\\' => 8,
         ),
-        'A' => 
+        'B' => 
         array (
-            'App\\' => 4,
+            'BITM\\SEIP12\\' => 12,
         ),
     );
 
@@ -108,7 +108,7 @@ class ComposerStaticInit8f14b2846775ba2ed872dc72dd789510
         array (
             0 => __DIR__ . '/..' . '/markbaker/complex/classes/src',
         ),
-        'App\\' => 
+        'BITM\\SEIP12\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),
