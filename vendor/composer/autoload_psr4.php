@@ -18,6 +18,8 @@ return array(
     'Mpdf\\PsrLogAwareTrait\\' => array($vendorDir . '/mpdf/psr-log-aware-trait/src'),
     'Mpdf\\' => array($vendorDir . '/mpdf/mpdf/src'),
     'Matrix\\' => array($vendorDir . '/markbaker/matrix/classes/src'),
+    'Intervention\\Image\\' => array($vendorDir . '/intervention/image/src/Intervention/Image'),
+    'GuzzleHttp\\Psr7\\' => array($vendorDir . '/guzzlehttp/psr7/src'),
     'DeepCopy\\' => array($vendorDir . '/myclabs/deep-copy/src/DeepCopy'),
     'Complex\\' => array($vendorDir . '/markbaker/complex/classes/src'),
     'BITM\\SEIP12\\' => array($baseDir . '/src'),

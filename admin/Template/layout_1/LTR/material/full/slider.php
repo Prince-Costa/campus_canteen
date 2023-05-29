@@ -1,13 +1,10 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'config.php');
-use App\Slider;
+// phpInfo();
+    use \BITM\SEIP12\Slider;
 
 	$slider = new Slider();
-	$slides = $slider->index();
-    dd($sliders);
-
-$slidersInJson = file_get_contents($dataResources . 'slider.json');
-$sliders = json_decode($slidersInJson);
+	$sliders = $slider->index();
 ?>
 
 <!DOCTYPE html>

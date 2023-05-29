@@ -1,8 +1,7 @@
 <?php
+namespace BITM\SEIP12;
 
-namespace App;
-
-use App\Config;
+use BITM\SEIP12\Config;
 
 class Slider{
 
@@ -11,19 +10,19 @@ class Slider{
     public $src = null;
     public $alt = null;
     public $title = null;
-    public $caption = null;
+    public $description = null;
+    public $status = null;
 
     private $data = null;
 
 
     public function __construct(){
 
-        $dataSlides = file_get_contents(Config::datasource().'slideritems.json');
+        $dataSlides = file_get_contents(Config::datasource().'slider.json');
         $this->data = json_decode($dataSlides);
     }
 
     public function index(){
-
         return $this->data;
     }
 
@@ -158,7 +157,7 @@ class Slider{
 
     private function insert(){
 
-        $datafile = Config::datasource()."slideritems.json";
+        $datafile = Config::datasource()."slider.json";
         if(file_exists($datafile)){
             file_put_contents($datafile,json_encode($this->data));
             return true;

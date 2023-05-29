@@ -1,12 +1,12 @@
 <?php
 
-namespace App;
+namespace BITM\SEIP12;
 
 class Config{
 
     static public function datasource(){
 
-        return self::docroot()."datasource".DIRECTORY_SEPARATOR;
+        return self::docroot()."data_source".DIRECTORY_SEPARATOR;
 
     }
 
