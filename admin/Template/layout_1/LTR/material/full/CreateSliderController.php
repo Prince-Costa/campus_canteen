@@ -4,6 +4,24 @@ include_once($_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'config.php');
 use \BITM\SEIP12\Slider;
 use \BITM\SEIP12\Utility\Utility;
 use Intervention\Image\ImageManager;
+// $slidersInJson = file_get_contents($dataResources . 'slider.json');
+// $sliders = json_decode($slidersInJson);
+// // dd($_FILES);
+// $maxId = 0;
+// if (count($sliders) > 0) {
+//     foreach ($sliders as $slider) {
+//         if ($slider->id > $maxId) {
+//             $maxId = $slider->id;
+//         };
+//     };
+// }
+// $fileName =uniqid().'_'.$_FILES['image']['name'];
+// $from = $_FILES['image']['tmp_name'];
+// $destinetion = $uploads.$fileName;
+// $src = null;
+// if(uploadFile($from, $destinetion)){
+//     $src = $fileName;
+// }
 
 
 

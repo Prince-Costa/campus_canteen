@@ -1,7 +1,7 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'config.php');
+// phpInfo();
     use \BITM\SEIP12\Slider;
-
 	$slider = new Slider();
 	$sliders = $slider->index();
 ?>
