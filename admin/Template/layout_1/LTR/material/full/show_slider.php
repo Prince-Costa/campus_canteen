@@ -1,23 +1,20 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'config.php');
-$sliderInJson = file_get_contents($dataResources . 'slider.json');
-$sliders = json_decode($sliderInJson);
-$id = $_GET['id'];
-$slider = '';
-foreach ($sliders as $key => $singleSlider) {
-    if ($singleSlider->id == $id) {
-        $slider = $singleSlider;
-    }
-    ;
+
+use \BITM\SEIP12\Slider;
+use \BITM\SEIP12\Utility\Utility;
+use \BITM\SEIP12\Utility\Validator;
+
+
+$id = Utility::sanitize($_GET['id']);
+
+$slide = new Slider();
+if(!Validator::empty($id)){
+    $slider = $slide->find($id);
+}else{
+    set_session('error','Id cannot be null');
 }
 ?>
-
-
-
-
-
-
-<?php include_once($_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'config.php'); ?>
 
 <!DOCTYPE html>
 <html lang="en">

@@ -20,6 +20,7 @@ class Slider{
 
         $dataSlides = file_get_contents(Config::datasource().'slider.json');
         $this->data = json_decode($dataSlides);
+        // dd($this->data);
     }
 
     public function index(){
@@ -60,7 +61,8 @@ class Slider{
             return $this->insert();
     }
 
-    public function destroy($id = null){ //completely removed
+    public function destroy($id){
+  
         if(empty($id)) {
             return;
         }
@@ -70,27 +72,15 @@ class Slider{
                 break;
             }
         }
-        // dd($key); to be deleted
-
+ 
         /**
-         * option 1
-        * unset($slides[$key]);
-        *  
-        * */ 
+        * option 1
+        * unset($slides[$key]); 
+        **/ 
         unset($this->data[$key]);
         //reindexing the array
         $this->data = array_values($this->data);
      
-
-
-        /**
-         * option 2
-        * array_splice($slides, $key, 1)
-        *  
-        * */ 
-        //array_splice($slides, $key, 1); // it reindexes
-        //$data_slides = json_encode($slides);
-
         return $this->insert();
 
     }
@@ -124,7 +114,6 @@ class Slider{
         $curentUniqueId = null;
 
         if(count($this->data) > 0){
-            // finding unique ids
             $ids = [];
             foreach($this->data as $aslide){
                 $ids[] = $aslide->id;
@@ -156,7 +145,6 @@ class Slider{
 
 
     private function insert(){
-
         $datafile = Config::datasource()."slider.json";
         if(file_exists($datafile)){
             file_put_contents($datafile,json_encode($this->data));

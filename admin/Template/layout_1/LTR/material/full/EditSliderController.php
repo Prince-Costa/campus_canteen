@@ -1,6 +1,11 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'config.php');
 
+use \BITM\SEIP12\Slider;
+use \BITM\SEIP12\Utility\Utility;
+use Intervention\Image\ImageManager;
+
+
 $src = null;
 $old_picture = null;
 $new_picture = null;
@@ -8,14 +13,21 @@ $new_picture = null;
 $old_picture = $_POST['old_image'];
 
 if (array_key_exists('new_image', $_FILES) && !empty($_FILES['new_image']['name'])) {
-    $filename = $_FILES['new_image']['name']; // if you want to keep the name as is
-    $filename = uniqid() . "_" . $_FILES['new_image']['name']; // if you want to keep the name as is
-    $from = $_FILES['new_image']['tmp_name'];
-    $destination = $uploads . $filename;
 
+    $manager = new ImageManager(['driver' => 'imagick']);
+
+
+    $filename = uniqid() . "_" . $_FILES['new_image']['name'];
     if (isset($old_picture)) {
-        if (uploadFile($from, $destination)) {
+        try {
+            $img = $manager->make($_FILES['new_image']['tmp_name'])
+                ->resize(300, 200)
+                ->save($uploads . $filename);
             $new_picture = $filename;
+        } catch (Intervention\Image\Exception\NotWritableException $e) {
+            dd($e);
+        } catch (Exception $e) {
+            dd($e);
         }
 
         if (file_exists($uploads . $old_picture)) {
@@ -25,42 +37,20 @@ if (array_key_exists('new_image', $_FILES) && !empty($_FILES['new_image']['name'
 }
 
 
-$id = $_POST['id'];
-$uuid = $_POST['uuid'];
-$title = $_POST['title'];
-$description = $_POST['description'];
-$src = $new_picture ?? $old_picture;
-$alt = $_POST['image_alt'];
+$id = Utility::sanitize($_POST['id']);
 
+$slide = new Slider;
+$slider = $slide->Find($id);
 
-$data = [
-    "id" => $id,
-    "uuid" => $uuid . $id,
-    "title" => $title,
-    "description" => $description,
-    "src" => $src,
-    "alt" => $alt,
-    "status" => true,
-];
+$slider->title = Utility::sanitize($_POST['title']);
+$slider->description = Utility::sanitize($_POST['description']);
+$slider->src = $new_picture ?? $old_picture;
+$slider->alt = Utility::sanitize($_POST['image_alt']);
+$slider->status = true;
 
-$slidersInJson = file_get_contents($dataResources . 'slider.json');
-$sliders = json_decode($slidersInJson);
-foreach ($sliders as $key => $slider) {
-    if ($slider->id == $id) {
-        break;
-    }
-}
-
-$sliders[$key] = (object) $data;
-
-$dataInJson = json_encode($sliders);
-
-if (file_exists($dataResources . 'slider.json')) {
-    $result = file_put_contents($dataResources . 'slider.json', $dataInJson);
-    if ($result) {
+    if ($slide->update($slider)) {
         set_session('success', 'Slider updated successfully');
         redirect('slider.php');
-    }
-} else {
+    }else {
     echo 'File Not Found';
 }
