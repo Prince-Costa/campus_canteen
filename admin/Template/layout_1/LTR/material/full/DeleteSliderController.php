@@ -17,4 +17,4 @@ if ($slide->destroy($id)) {
     }
     set_session('success', 'Slider deleted successfully');
     redirect("slider.php");
-};
+};     
