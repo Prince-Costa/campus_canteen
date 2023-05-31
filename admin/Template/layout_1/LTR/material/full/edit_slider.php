@@ -1,15 +1,13 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'config.php');
-$slidersInJson = file_get_contents($dataResources . 'slider.json');
-$sliders = json_decode($slidersInJson);
-$id = $_GET['id'];
-$slider = '';
-foreach ($sliders as $key => $singleSlider) {
-    if ($singleSlider->id == $id) {
-        $slider = $singleSlider;
-    }
-    ;
-}
+
+use \BITM\SEIP12\Slider;
+use \BITM\SEIP12\Utility\Utility;
+
+
+$id = Utility::sanitize($_GET["id"]);
+$slide = new Slider;
+$slider = $slide->find($id);
 ?>
 
 
