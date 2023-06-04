@@ -85,7 +85,7 @@
     "subnav": [
       {
         "name": "Add User",
-        "url": "add_user.html"
+        "url": "add_user.php"
       },
       {
         "name": "Users",

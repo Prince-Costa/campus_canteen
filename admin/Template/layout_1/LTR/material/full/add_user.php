@@ -499,17 +499,30 @@
         <!-- Content area -->
         <div class="content">
             <h3>Add User</h3>
-            <form action="">
+            <form action="createUserController.php" method="post">
             <div class="row">
                 <div class="col-md-6">
-                    <div class="form-group row">
+                <div class="form-group row">
                         <label class="col-form-label col-lg-2">User Name<span class="text-danger">*</span></label>
                         <div class="col-lg-10">
-                            <input type="text" class="form-control" placeholder="Enter user name...">
+                            <input type="text" name="username" class="form-control" placeholder="Enter user name...">
+                        </div>
+                    </div> 
+                    <div class="form-group row">
+                        <label class="col-form-label col-lg-2">Frist Name<span class="text-danger">*</span></label>
+                        <div class="col-lg-10">
+                            <input type="text" name="first_name" class="form-control" placeholder="Enter user first name...">
+                        </div>
+                    </div> 
+                    <div class="form-group row">
+                        <label class="col-form-label col-lg-2">Last Name</label>
+                        <div class="col-lg-10">
+                            <input type="text" name="last_name" class="form-control" placeholder="Enter user last name...">
                         </div>
                     </div>
+                    
     
-                    <div class="form-group row">
+                    <!-- <div class="form-group row">
                         <label class="col-form-label col-lg-2">Email<span class="text-danger">*</span></label>
                         <div class="col-lg-10">
                             <input type="email" class="form-control" placeholder="Enter email address...">
@@ -528,16 +541,22 @@
                         <div class="col-lg-10">
                             <div class="uniform-uploader"><input type="file" class="form-control-uniform" data-fouc=""><span class="filename" style="user-select: none;">No file selected</span><span class="action btn btn-light legitRipple" style="user-select: none;">Choose File</span></div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="col-md-6">
-                    <div class="form-group row">
+                <div class="form-group row">
+                        <label class="col-form-label col-lg-2">Gender<span class="text-danger">*</span></label>
+                        <div class="col-lg-10">
+                            <input type="text" name="gender" class="form-control" placeholder="Enter user gender...">
+                        </div>
+                    </div>
+                    <!-- <div class="form-group row">
                         <label class="col-form-label col-lg-2">Address</label>
                         <div class="col-lg-10">
                             <input type="email" class="form-control" placeholder="Enter your address...">
                         </div>
-                    </div>
-
+                    </div> -->
+<!-- 
                     <div class="form-group row">
                         <label class="col-form-label col-lg-2">Role<span class="text-danger">*</span></label>
                         <div class="col-lg-10">
@@ -551,26 +570,26 @@
 								</optgroup>
 							</select>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="form-group row">
                         <label class="col-form-label col-lg-2">Password<span class="text-danger">*</span></label>
                         <div class="col-lg-10">
-                            <input type="email" class="form-control" placeholder="Enter password...">
+                            <input name="password" type="password" class="form-control" placeholder="Enter password...">
                         </div>
                     </div>
 
-                    <div class="form-group row">
+                    <!-- <div class="form-group row">
                         <label class="col-form-label col-lg-2">Confirm Password<span class="text-danger">*</span></label>
                         <div class="col-lg-10">
                             <input type="email" class="form-control" placeholder="Confirm password...">
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div> 
             <div class="ps-5">
                 <div class="text-start">
-                    <button type="submit" class="btn btn-primary legitRipple">Save</button>
+                    <input name="add_record" value="Save" type="submit" class="btn btn-primary legitRipple"/>
                 </div>
             </div>
             </form>
