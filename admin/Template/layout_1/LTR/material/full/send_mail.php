@@ -7,15 +7,12 @@ use PHPMailer\PHPMailer\Exception;
 
 $mail = new PHPMailer(true);
 
-try {
-    //Server settings
-    // $mail->SMTPDebug = SMTP::DEBUG_SERVER;                     
+try {                 
     $mail->isSMTP();      
     $mail->Host     = 'smtp.mailtrap.io';                                        
     $mail->SMTPAuth = true;
     $mail->Username = 'bae8882e3f28e8';
-    $mail->Password = '6b2128c78561de';                            
-    // $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;      
+    $mail->Password = '6b2128c78561de';                               
     $mail->Port = 587;                                      
 
     //Recipients
@@ -27,7 +24,7 @@ try {
     // $mail->addBCC('bcc@example.com');
 
 
-    $mail->addAttachment($uploads.'64706cde7bd8a_Screenshot 2023-05-26 134100.png', '64706cde7bd8a_Screenshot 2023-05-26 134100.png'); 
+    $mail->addAttachment($uploads.'6476c25600a7b_Screenshot 2023-05-25 113414.png', '6476c25600a7b_Screenshot 2023-05-25 113414.png'); 
 
     //Content
     $mail->isHTML(true);                

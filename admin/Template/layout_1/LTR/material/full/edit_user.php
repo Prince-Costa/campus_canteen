@@ -1,3 +1,14 @@
+<?php include_once($_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'config.php');
+use BITM\SEIP12\DB;
+
+
+$pdo_statement = DB::db_connection()->prepare("SELECT * FROM user_details where id=".$_GET['id']);
+$pdo_statement->execute();
+$user = $pdo_statement->fetchAll();
+// dd($user);
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -498,26 +509,26 @@
 
         <!-- Content area -->
         <div class="content">
-            <h3>Add User</h3>
+            <h3>Edit User</h3>
             <form action="UserController.php" method="post">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-12">
                 <div class="form-group row">
                         <label class="col-form-label col-lg-2">User Name<span class="text-danger">*</span></label>
                         <div class="col-lg-10">
-                            <input type="text" name="username" class="form-control" placeholder="Enter user name...">
+                            <input type="text" name="username" class="form-control" placeholder="Enter user name..." value="<?=$user[0]['username']?>">
                         </div>
                     </div> 
                     <div class="form-group row">
                         <label class="col-form-label col-lg-2">Frist Name<span class="text-danger">*</span></label>
                         <div class="col-lg-10">
-                            <input type="text" name="first_name" class="form-control" placeholder="Enter user first name...">
+                            <input type="text" name="first_name" class="form-control" placeholder="Enter user first name..." value="<?=$user[0]['first_name']?>">
                         </div>
                     </div> 
                     <div class="form-group row">
                         <label class="col-form-label col-lg-2">Last Name</label>
                         <div class="col-lg-10">
-                            <input type="text" name="last_name" class="form-control" placeholder="Enter user last name...">
+                            <input type="text" name="last_name" class="form-control" placeholder="Enter user last name..." value="<?=$user[0]['last_name']?>">
                         </div>
                     </div>
                     
@@ -542,14 +553,15 @@
                             <div class="uniform-uploader"><input type="file" class="form-control-uniform" data-fouc=""><span class="filename" style="user-select: none;">No file selected</span><span class="action btn btn-light legitRipple" style="user-select: none;">Choose File</span></div>
                         </div>
                     </div> -->
-                </div>
-                <div class="col-md-6">
-                <div class="form-group row">
+                    <div class="form-group row">
                         <label class="col-form-label col-lg-2">Gender<span class="text-danger">*</span></label>
                         <div class="col-lg-10">
-                            <input type="text" name="gender" class="form-control" placeholder="Enter user gender...">
+                            <input type="text" name="gender" class="form-control" placeholder="Enter user gender..." value="<?=$user[0]['gender']?>">
                         </div>
                     </div>
+                </div>
+                <!-- <div class="col-md-6"> -->
+                
                     <!-- <div class="form-group row">
                         <label class="col-form-label col-lg-2">Address</label>
                         <div class="col-lg-10">
@@ -572,12 +584,12 @@
                         </div>
                     </div> -->
 
-                    <div class="form-group row">
+                    <!-- <div class="form-group row">
                         <label class="col-form-label col-lg-2">Password<span class="text-danger">*</span></label>
                         <div class="col-lg-10">
                             <input name="password" type="password" class="form-control" placeholder="Enter password...">
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- <div class="form-group row">
                         <label class="col-form-label col-lg-2">Confirm Password<span class="text-danger">*</span></label>
@@ -585,11 +597,12 @@
                             <input type="email" class="form-control" placeholder="Confirm password...">
                         </div>
                     </div> -->
-                </div>
+                <!-- </div> -->
             </div> 
             <div class="ps-5">
                 <div class="text-start">
-                    <input name="add_record" value="Save" type="submit" class="btn btn-primary legitRipple"/>
+                <input type="hidden" name="id" value="<?=$user[0]['id']?>">
+                <input name="edit_record" type="submit" value="Edit" class="btn btn-info btn-sm"/>
                 </div>
             </div>
             </form>

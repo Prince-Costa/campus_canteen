@@ -1,5 +1,4 @@
 <?php
-phpInfo();
 
 include_once($_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'config.php');
 $productsInJson = file_get_contents($dataResources . 'products.json');
@@ -230,7 +229,7 @@ include_once($partialAdmin . 'top_nav.php');
                                                         <a href="edit_product.php?id=<?= $product->id ?>"
                                                            class="btn border rounded-round mx-1"><i
                                                                     class="icon-pencil text-info"></i></a>
-                                                        <form action="DeleteProductController.php" method="post" onclick="return confirm('Are you sure you want to delete this item')">
+                                                        <form action="DeleteProductController.php" method="post" onclick="return confirm('Are you sure you want to delete this item?')">
                                                             <input type="hidden" name="id"
                                                                    value="<?= $product->id ?>">
                                                             <input type="hidden" name="old_image"
