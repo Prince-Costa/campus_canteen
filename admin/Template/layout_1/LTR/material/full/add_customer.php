@@ -44,8 +44,9 @@
     <script src="../../../../global_assets/js/demo_charts/pages/dashboard/light/bullets.js"></script>
 
 
-    <!--    For Radio Checkbox-->
-    <script src="../../../../global_assets/js/demo_pages/form_checkboxes_radios.js"></script>
+    <!-- For Select -->
+    <script src="../../../../global_assets/js/plugins/forms/selects/select2.min.js"></script>
+	<script src="../../../../global_assets/js/demo_pages/form_select2.js"></script>
     <!-- /theme JS files -->
 
 </head>
@@ -499,87 +500,87 @@
         <div class="content">
             <h3>Add Customer</h3>
 
-            <form action="">
+            <form method="post" action="CustomerController.php" enctype="multipart/form-data">
                 <div class="form-group row">
                     <label class="col-form-label col-lg-2">Name<span class="text-danger">*</span></label>
                     <div class="col-lg-10">
-                        <input type="text" class="form-control" placeholder="Enter your name...">
+                        <input name="name" type="text" class="form-control" placeholder="Enter your name...">
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label class="col-form-label col-lg-2">Phone<span class="text-danger">*</span></label>
                     <div class="col-lg-10">
-                        <input type="text" class="form-control" placeholder="Enter phone number...">
+                        <input name="phone" type="text" class="form-control" placeholder="Enter phone number...">
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label class="col-form-label col-lg-2">Email<span class="text-danger">*</span></label>
                     <div class="col-lg-10">
-                        <input type="email" class="form-control" placeholder="Enter email address...">
+                        <input name="email" type="email" class="form-control" placeholder="Enter email address...">
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label class="col-form-label col-lg-2">Department</label>
                     <div class="col-lg-10">
-                        <input type="text" class="form-control" placeholder="Enter your department name...">
+                        <input name="department" type="text" class="form-control" placeholder="Enter your department name...">
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label class="col-form-label col-lg-2">Batch</label>
                     <div class="col-lg-10">
-                        <input type="text" class="form-control" placeholder="Enter your batch number...">
+                        <input name="batch" type="text" class="form-control" placeholder="Enter your batch number...">
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label class="col-form-label col-lg-2">Age</label>
                     <div class="col-lg-10">
-                        <input type="text" class="form-control" placeholder="Enter your age...">
+                        <input name="age" type="text" class="form-control" placeholder="Enter your age...">
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label class="col-form-label col-lg-2">Address</label>
                     <div class="col-lg-10">
-                        <textarea type="text" class="form-control"></textarea>
+                        <textarea name="address" type="text" class="form-control"></textarea>
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label class="col-form-label col-lg-2">Image</label>
                     <div class="col-lg-10">
-                        <div class="uniform-uploader"><input type="file" class="form-control-uniform" data-fouc=""><span class="filename" style="user-select: none;">No file selected</span><span class="action btn btn-light legitRipple" style="user-select: none;">Choose File</span></div>
+                        <input name="image" type="file">
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label class="col-form-label col-lg-2">User Name<span class="text-danger">*</span></label>
                     <div class="col-lg-10">
-                        <input type="text" class="form-control" placeholder="Enter your user name...">
+                        <input name="user_name" type="text" class="form-control" placeholder="Enter your user name...">
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label class="col-form-label col-lg-2">Password<span class="text-danger">*</span></label>
                     <div class="col-lg-10">
-                        <input type="text" class="form-control" placeholder="Enter your password...">
+                        <input name="paswword" type="text" class="form-control" placeholder="Enter your password...">
                     </div>
                 </div>
 
-                <div class="form-group row">
+                <!-- <div class="form-group row">
                     <label class="col-form-label col-lg-2">Confirm Password<span class="text-danger">*</span></label>
                     <div class="col-lg-10">
                         <input type="text" class="form-control" placeholder="Cofirm password...">
                     </div>
-                </div>
+                </div> -->
 
                 <div class="ps-5">
                     <div class="text-start">
-                        <button type="submit" class="btn btn-primary legitRipple">Save</button>
+                        <input type="submit" name="add_record" value="Save" class="btn btn-primary legitRipple"/>
                     </div>
                 </div>
             </form>

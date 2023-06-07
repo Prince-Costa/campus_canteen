@@ -15,11 +15,11 @@
     "subnav": [
       {
         "name": "Add Customer",
-        "url": "add_customer.html"
+        "url": "add_customer.php"
       },
       {
         "name": "Customers",
-        "url": "customers.html"
+        "url": "customers.php"
       }
     ]
   },
